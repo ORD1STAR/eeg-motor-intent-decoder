@@ -1,0 +1,12 @@
+loaded 28 recordings (12 scenario 1, 16 scenario 2) from 10 subjects
+eegnet S01: val 0.547 (12 ep, 44s) test S01-1:0.902 S01-2:0.876 S01-3:0.667
+eegnet S02: val 0.713 (10 ep, 22s) test S02-1:0.479 S02-2:0.642 S02-3:0.532 S02-4:0.398
+eegnet S03: val 0.480 (9 ep, 22s) test S03-1:0.775 S03-2:0.698
+eegnet S04: val 0.839 (15 ep, 32s) test S04-1:0.552 S04-2:0.558 S04-3:0.827 S04-4:0.442
+eegnet S05: val 0.738 (11 ep, 26s) test S05-3:0.806 S05-4:0.704 S05-5:0.752 S05-6:0.607
+eegnet S06: val 0.630 (10 ep, 24s) test S06-1:0.810 S06-2:0.600
+eegnet S07: val 0.667 (22 ep, 51s) test S07-2:0.756 S07-3:0.622 S07-4:0.470 S07-5:0.510
+eegnet S08: val 0.490 (10 ep, 22s) test S08-1:0.749 S08-2:0.646
+eegnet S09: val 0.505 (11 ep, 24s) test S09-1:0.632 S09-2:0.195
+eegnet S10: val 0.706 (10 ep, 22s) test S10-0:0.458
+eegnet LOSO task_rest AUC mean 0.631 median 0.637 (raw 0.585)

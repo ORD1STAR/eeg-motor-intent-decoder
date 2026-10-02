@@ -1,0 +1,2 @@
+loaded 28 recordings (12 scenario 1, 16 scenario 2) from 10 subjects
+saved <local-path> CODE COMPLET\PFE-Final\eegbci\models\brain_switch.joblib (trained on 28 recordings)

@@ -1,0 +1,51 @@
+rest_push|clean|subject                n=10  minp=0.002 | p=0.076 + 19-35Hz 8.5-13s peak +1.76dB [Oz,O1,P7,P3]; p=0.133 + 15-27Hz 16.5-23.5s peak +1.74dB [CP5,O1,Pz,P3]; p=0.414 + 9-17Hz 0-7s peak +1.80dB [P3,O1,C4,CP6]
+<local-path> CODE COMPLET\PFE-Final\eegbci\maps.py:325: RuntimeWarning: Mean of empty slice
+  m, l, h = ci95(np.nanmean(P[:, k, tm], 1))
+rest_push|clean|recording              n=28  minp=0.000 | p=0.099 + 19-35Hz 8.5-15s peak +1.71dB [O1,Oz,P3,P7]; p=0.351 + 18-27Hz 17-23s peak +1.46dB [P3,O1,CP5,CP1]; p=0.382 + 9-17Hz 0-6.5s peak +1.94dB [O1,P3,Oz,P8]
+rest_push|raw|subject                  n=10  minp=0.002 | p=0.006 + 7-45Hz 0.5-25s peak +1.97dB [Oz,O1,P7,O2]; p=0.176 + 36-45Hz 15-24.5s peak +2.25dB [CP1,T8,Pz,C3]; p=0.631 + 7-13Hz 16.5-19.5s peak +1.96dB [P7,FC2,O1,Oz]
+rest_push|masked|subject               n=10  minp=0.002 | p=0.004 + 13-45Hz 8-25s peak +2.38dB [CP5,O1,Oz,P3]; p=0.188 + 29-43Hz 0-8.5s peak +1.97dB [O2,O1,CP6,FC6]; p=0.330 + 6-17Hz 0-7s peak +1.95dB [FC2,C4,P8,O1]
+rest_push_s1|clean|subject             n=7   minp=0.016 | p=0.609 + 6-12Hz 2.5-7s peak +2.89dB [FC2,FC6,F3,FC1]; p=0.922 + 6-16Hz 23-25s peak +2.14dB [F3,Cz,CP2,FC1]; p=0.938 + 13-21Hz 8-11s peak +2.02dB [FC6,C4,CP6,CP2]
+<local-path> CODE COMPLET\PFE-Final\eegbci\maps.py:325: RuntimeWarning: Mean of empty slice
+  m, l, h = ci95(np.nanmean(P[:, k, tm], 1))
+rest_push_s1|clean|recording           n=12  minp=0.000 | p=0.513 + 7-18Hz 2-6.5s peak +3.12dB [FC2,F3,P8,FC1]; p=0.771 + 35-41Hz 8-15s peak +2.06dB [O1,P7,Oz,T8]; p=0.813 + 16-25Hz 17-20s peak +2.22dB [O1,P3,CP5,P7]
+rest_push_s1|raw|subject               n=7   minp=0.016 | p=0.344 + 8-21Hz 2-7s peak +2.60dB [P8,F3,FC2,F4]; p=0.438 + 29-42Hz 11.5-18.5s peak +2.31dB [Oz,P7,O1,CP5]; p=0.453 + 35-45Hz 17.5-24.5s peak +3.10dB [T8,FC1,P7,C3]
+rest_push_s1|masked|subject            n=7   minp=0.016 | p=0.156 + 7-27Hz 1.5-12s peak +2.86dB [P8,FC2,O1,FC6]; p=0.547 + 38-45Hz 17-24s peak +3.30dB [T8,FC1,C4,C3]; p=0.641 + 18-27Hz 16.5-20.5s peak +2.64dB [O1,P7,T7,CP5]
+rest_push_s2|clean|subject             n=5   minp=0.062 | p=0.188 + 26-33Hz 6-11.5s peak +2.72dB [Oz,C3,O1,FC1]; p=0.375 + 19-25Hz 10.5-14.5s peak +2.22dB [CP5,P7,C3,P3]; p=0.500 + 23-27Hz 17.5-21s peak +2.04dB [Cz,O1,CP6,T8]
+rest_push_s2|clean|recording           n=16  minp=0.000 | p=0.007 + 19-35Hz 8-16s peak +2.56dB [C3,FC1,P3,P7]; p=0.592 + 20-27Hz 17.5-22.5s peak +2.00dB [Cz,O1,CP1,P3]; p=0.801 - 8-15Hz 0.5-4s peak -2.31dB [CP5,T7,F4,P3]
+rest_push_s2|raw|subject               n=5   minp=0.062 | p=0.062 + 22-34Hz 16-25s peak +1.86dB [P3,Cz,FC1,CP2]; p=0.062 + 18-42Hz 7-16.5s peak +2.21dB [P3,Oz,Pz,F4]; p=0.562 + 7-20Hz 21-24.5s peak +1.79dB [P3,C3,CP5,FC1]
+rest_push_s2|masked|subject            n=5   minp=0.062 | p=0.062 + 25-36Hz 5.5-14s peak +2.89dB [F4,FC1,Fz,P3]; p=0.312 + 19-26Hz 10-14.5s peak +2.42dB [P7,CP5,P3,C3]; p=0.500 + 22-27Hz 18-23s peak +2.26dB [Cz,O1,CP2,T8]
+rest_walk|clean|subject                n=7   minp=0.016 | p=0.016 + 8-25Hz 1-7.5s peak +4.53dB [P4,P7,P3,P8]; p=0.516 + 4-11Hz 7.5-10s peak +2.73dB [Fz,F3,FC2,Cz]; p=0.688 + 17-23Hz 14.5-19s peak +2.28dB [P4,O2,Oz,P8]
+<local-path> CODE COMPLET\PFE-Final\eegbci\maps.py:325: RuntimeWarning: Mean of empty slice
+  m, l, h = ci95(np.nanmean(P[:, k, tm], 1))
+rest_walk|clean|recording              n=12  minp=0.000 | p=0.002 + 4-35Hz 0-10.5s peak +4.93dB [P7,P4,P8,O2]; p=0.389 + 17-27Hz 9-14s peak +2.24dB [O2,P7,P8,O1]; p=0.477 + 4-23Hz 20-25s peak +2.72dB [O2,P7,P8,O1]
+rest_walk|raw|subject                  n=7   minp=0.016 | p=0.047 + 9-25Hz 1-6.5s peak +4.05dB [P3,P7,CP1,P4]; p=0.188 + 5-12Hz 7-16s peak +3.83dB [T8,FT10,F3,F4]; p=0.250 + 5-17Hz 18.5-25s peak +2.66dB [P7,O1,Oz,T8]
+rest_walk|masked|subject               n=7   minp=0.016 | p=0.016 + 8-34Hz 1-10s peak +4.62dB [P7,P4,P3,CP5]; p=0.141 + 6-13Hz 11-19.5s peak +4.22dB [F3,T8,Cz,FC1]; p=0.547 + 16-23Hz 9-18.5s peak +2.38dB [P8,O2,P4,O1]
+push_walk|clean|subject                n=5   minp=0.062 | p=0.250 - 15-19Hz 1.5-3.5s peak -2.53dB [C4,CP2,CP5,P3]; p=0.438 - 6-12Hz 0.5-2.5s peak -3.46dB [P4,T8,CP2,CP6]; p=0.562 - 7-10Hz 5-11s peak -2.13dB [P3,CP1,CP5,C3]
+push_walk|clean|recording              n=16  minp=0.000 | p=0.278 - 7-14Hz 3-10s peak -2.07dB [CP5,P3,P7,Pz]; p=0.290 - 6-13Hz 0.5-4s peak -3.21dB [FT10,C4,T8,P7]; p=0.301 - 15-22Hz 5-9.5s peak -1.84dB [FC2,CP2,F4,F3]
+push_walk|raw|subject                  n=5   minp=0.062 | p=0.438 - 5-12Hz 3-10.5s peak -2.05dB [P3,CP1,CP5,Fz]; p=0.688 - 15-20Hz 5.5-9s peak -1.61dB [FC2,T7,F3,Fz]; p=0.688 - 7-11Hz 0-2s peak -2.20dB [P7,P4,CP6,CP5]
+push_walk|masked|subject               n=5   minp=0.062 | p=0.312 - 38-45Hz 12.5-17.5s peak -2.00dB [FC5,T7,C3,CP5]; p=0.312 - 14-20Hz 6-9s peak -2.10dB [FC2,F4,Fz,F3]; p=0.312 - 15-20Hz 1.5-3.5s peak -2.64dB [CP5,P3,C4,CP2]
+push_rest|clean|subject                n=7   minp=0.016 | p=0.031 - 5-14Hz 0-10s peak -4.30dB [Pz,CP2,P4,O1]; p=0.047 - 14-21Hz 0-15.5s peak -2.85dB [O1,Pz,P7,P3]; p=0.812 - 26-33Hz 0-3s peak -2.91dB [FC2,P4,F4,Fz]
+<local-path> CODE COMPLET\PFE-Final\eegbci\maps.py:325: RuntimeWarning: Mean of empty slice
+  m, l, h = ci95(np.nanmean(P[:, k, tm], 1))
+push_rest|clean|recording              n=12  minp=0.000 | p=0.001 - 4-22Hz 0-11s peak -4.14dB [O1,P4,Pz,CP2]; p=0.710 - 26-33Hz 0-3s peak -2.55dB [FC2,T8,Fz,P4]; p=0.783 - 14-21Hz 9.5-15s peak -2.64dB [O1,P3,P7,O2]
+push_rest|raw|subject                  n=7   minp=0.016 | p=0.031 - 8-25Hz 0-10.5s peak -3.02dB [O1,Pz,P4,CP2]; p=0.875 - 27-33Hz 0-3s peak -1.79dB [P4,P7,Oz,C3]; p=0.906 - 39-45Hz 10.5-14s peak -1.76dB [P3,CP5,T7,FC1]
+push_rest|masked|subject               n=7   minp=0.016 | p=0.172 - 14-22Hz 0-15s peak -2.90dB [O1,P7,Pz,O2]; p=0.250 - 6-13Hz 0.5-6s peak -4.12dB [O1,P4,Pz,C4]; p=0.484 - 5-14Hz 5-10s peak -3.19dB [Pz,CP2,CP1,O1]
+walk_rest|clean|subject                n=10  minp=0.002 | p=0.025 - 4-13Hz 0-9s peak -3.13dB [C4,P3,P7,CP5]; p=0.070 - 4-14Hz 10-16.5s peak -2.57dB [Fz,CP2,F3,FC2]; p=0.334 + 39-45Hz 7.5-13s peak +1.38dB [F4,FC2,P4,FT10]
+<local-path> CODE COMPLET\PFE-Final\eegbci\maps.py:325: RuntimeWarning: Mean of empty slice
+  m, l, h = ci95(np.nanmean(P[:, k, tm], 1))
+walk_rest|clean|recording              n=28  minp=0.000 | p=0.001 - 4-16Hz 0-17s peak -2.68dB [FC1,Fz,FC2,F3]; p=0.268 - 14-24Hz 7.5-18s peak -1.61dB [O2,P3,P8,P4]; p=0.609 + 40-45Hz 7.5-13.5s peak +1.42dB [F4,FT10,FC2,P4]
+walk_rest|raw|subject                  n=10  minp=0.002 | p=0.045 - 4-13Hz 0-8.5s peak -2.66dB [P3,Cz,CP1,C3]; p=0.246 - 4-11Hz 13-18s peak -1.84dB [CP5,C3,P3,FC6]; p=0.268 - 14-24Hz 8.5-17s peak -1.45dB [P3,CP5,P7,O2]
+walk_rest|masked|subject               n=10  minp=0.002 | p=0.029 - 4-15Hz 0-9s peak -3.09dB [C4,P3,P7,CP5]; p=0.051 - 4-14Hz 10-16.5s peak -2.59dB [T8,Fz,FC2,FC1]; p=0.205 - 13-25Hz 10-18s peak -1.74dB [O2,O1,P3,P7]
+rp_minus_rw_s1|clean|subject           n=7   minp=0.016 | p=0.688 - 8-13Hz 4.5-6.5s peak -4.24dB [P7,CP2,C4,F4]; p=0.844 - 16-22Hz 10-13.5s peak -3.52dB [FC2,P8,CP6,O2]; p=0.969 - 26-29Hz 5.5-8.5s peak -3.57dB [Pz,Cz,CP1,P3]
+<local-path> CODE COMPLET\PFE-Final\eegbci\maps.py:325: RuntimeWarning: Mean of empty slice
+  m, l, h = ci95(np.nanmean(P[:, k, tm], 1))
+rp_minus_rw_s1|clean|recording         n=12  minp=0.000 | p=0.231 - 8-16Hz 4-10.5s peak -4.23dB [P7,P8,FT10,CP2]; p=0.736 - 16-22Hz 10-14s peak -3.30dB [P8,FC2,CP6,F4]; p=0.771 + 27-31Hz 16-22s peak +3.23dB [CP6,P4,T8,T7]
+rp_minus_rw_s1|raw|subject             n=7   minp=0.016 | p=0.312 + 26-38Hz 15.5-23.5s peak +3.23dB [T8,FC2,P4,CP6]; p=0.719 - 5-12Hz 10.5-14s peak -3.80dB [T8,P4,CP2,CP6]; p=0.922 - 9-14Hz 4-6s peak -3.17dB [CP1,CP2,Cz,Pz]
+rp_minus_rw_s1|masked|subject          n=7   minp=0.016 | p=0.094 + 26-45Hz 16-25s peak +4.13dB [FC5,T8,CP6,FC1]; p=0.703 - 8-14Hz 4-6.5s peak -4.43dB [P7,CP2,C4,F3]; p=0.859 - 5-12Hz 10.5-12.5s peak -4.12dB [O2,P8,CP2,P4]
+pr_minus_wr_s1|clean|subject           n=7   minp=0.016 | p=0.203 - 40-45Hz 8.5-13s peak -3.30dB [FC5,F4,FC6,F3]; p=0.688 - 40-45Hz 5-8.5s peak -3.39dB [C4,FC6,FC2,CP2]; p=0.750 + 9-15Hz 15.5-17.5s peak +3.17dB [CP5,FC1,Cz,F3]
+<local-path> CODE COMPLET\PFE-Final\eegbci\maps.py:325: RuntimeWarning: Mean of empty slice
+  m, l, h = ci95(np.nanmean(P[:, k, tm], 1))
+pr_minus_wr_s1|clean|recording         n=12  minp=0.000 | p=0.182 - 14-21Hz 0-8s peak -3.30dB [FC6,FC5,FT9,F3]; p=0.334 - 39-45Hz 5-9s peak -3.52dB [C4,FC2,FC6,CP2]; p=0.536 - 41-45Hz 9.5-13.5s peak -3.30dB [FC5,FC6,F3,C3]
+pr_minus_wr_s1|raw|subject             n=7   minp=0.016 | p=0.219 - 39-45Hz 4.5-13.5s peak -3.01dB [FC6,P8,F4,C4]; p=0.625 - 12-20Hz 5.5-8.5s peak -3.05dB [C4,CP2,FC2,P4]; p=0.750 + 4-14Hz 12.5-18s peak +3.23dB [FT9,T7,CP5,FC5]
+pr_minus_wr_s1|masked|subject          n=7   minp=0.016 | p=0.172 - 39-45Hz 8.5-13.5s peak -3.49dB [FC5,FC6,CP2,F3]; p=0.594 - 38-45Hz 5-8s peak -4.13dB [C3,CP1,FC2,P8]; p=0.625 + 9-15Hz 15.5-18s peak +3.51dB [FC1,Fz,FC5,F3]
+saved maps_summary.json / maps_stats.npz

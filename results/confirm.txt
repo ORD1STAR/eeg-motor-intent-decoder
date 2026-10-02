@@ -1,0 +1,4 @@
+CONFIRM logbp all fb causal60 smooth=8s | task_rest | xsess auc mean 0.693 median 0.704 (n=27) | null 0.498�0.034 p=0.032
+CONFIRM logbp all fb causal60 | task_rest | within   auc mean 0.640 median 0.637 (n=28) | null 0.471�0.027 p=0.032
+CONFIRM ts PO a+b causal60 smooth=8s | task_rest | loso auc mean 0.649 median 0.718 (n=28) | null 0.484�0.038 p=0.032
+CONFIRM ts PO a+b causal60 smooth=8s | task_rest | xsess auc mean 0.676 median 0.695 (n=27) | null 0.509�0.043 p=0.032

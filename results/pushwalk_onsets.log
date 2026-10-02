@@ -1,0 +1,86 @@
+<local-path> CODE COMPLET\PFE-Final\eegbci\pushwalk.py:171: RuntimeWarning: Mean of empty slice
+  return np.nanmean(X[m], 0) if m.any() else np.full(X.shape[1], np.nan)
+
+=== onsets raw early (n_rec=12, n_subj=7)
+  W-P naive (gap 100s)                 |mean| 0.41 dB  rms-t rec 1.31 subj 1.28 MDE subj 1.20 dB rec 0.93  #p<.05unc(rec)  2/35  FWER rec 0 subj 0 (min p 0.625) best c_mid|beta2 +0.46dB | MI|alpha: +0.16dB t_s=+0.23 p_s=0.822 MI|beta1: -0.12dB t_s=-0.89 p_s=0.406
+  W1-P2 (gap 50s, different class)     |mean| 0.41 dB  rms-t rec 1.01 subj 0.87 MDE subj 1.57 dB rec 1.33  #p<.05unc(rec)  1/35  FWER rec 0 subj 0 (min p 0.812) best c_right|theta -0.91dB | MI|alpha: +0.05dB t_s=-0.24 p_s=0.821 MI|beta1: +0.11dB t_s=+0.39 p_s=0.712
+  P2-P1 (gap 50s, same class)          |mean| 0.47 dB  rms-t rec 0.91 subj 0.86 MDE subj 1.94 dB rec 1.69  #p<.05unc(rec)  0/35  FWER rec 0 subj 0 (min p 0.719) best occipital|beta1 +1.87dB | MI|alpha: +0.70dB t_s=+2.83 p_s=0.030 MI|beta1: +0.06dB t_s=-0.01 p_s=0.991
+  W2-W1 (gap 50s, same class)          |mean| 0.63 dB  rms-t rec 1.67 subj 1.98 MDE subj 1.29 dB rec 1.25  #p<.05unc(rec)  7/35  FWER rec 0 subj 0 (min p 0.172) best frontal|alpha +2.20dB | MI|alpha: -0.48dB t_s=-1.52 p_s=0.180 MI|beta1: -0.52dB t_s=-2.99 p_s=0.024
+  W-P linear-time-controlled           |mean| 0.66 dB  rms-t rec 1.11 subj 1.08 MDE subj 2.63 dB rec 2.40  #p<.05unc(rec)  2/35  FWER rec 0 subj 0 (min p 0.516) best temporal|theta -1.09dB | MI|alpha: -0.06dB t_s=-0.44 p_s=0.677 MI|beta1: +0.34dB t_s=+0.97 p_s=0.371
+
+=== onsets raw late (n_rec=12, n_subj=7)
+  W-P naive (gap 100s)                 |mean| 0.38 dB  rms-t rec 1.43 subj 1.18 MDE subj 1.28 dB rec 0.93  #p<.05unc(rec)  3/35  FWER rec 0 subj 0 (min p 0.375) best temporal|alpha +0.89dB | MI|alpha: +0.07dB t_s=+0.29 p_s=0.782 MI|beta1: -0.10dB t_s=-0.91 p_s=0.399
+  W1-P2 (gap 50s, different class)     |mean| 0.41 dB  rms-t rec 1.12 subj 1.03 MDE subj 1.51 dB rec 1.28  #p<.05unc(rec)  0/35  FWER rec 0 subj 0 (min p 0.781) best occipital|beta1 -0.73dB | MI|alpha: +0.03dB t_s=-0.11 p_s=0.916 MI|beta1: -0.05dB t_s=-0.38 p_s=0.719
+  P2-P1 (gap 50s, same class)          |mean| 0.23 dB  rms-t rec 0.63 subj 0.69 MDE subj 2.17 dB rec 1.67  #p<.05unc(rec)  1/35  FWER rec 0 subj 0 (min p 0.922) best temporal|beta2 -0.65dB | MI|alpha: +0.04dB t_s=+0.59 p_s=0.578 MI|beta1: +0.09dB t_s=+0.38 p_s=0.720
+  W2-W1 (gap 50s, same class)          |mean| 0.61 dB  rms-t rec 1.54 subj 1.75 MDE subj 1.30 dB rec 1.04  #p<.05unc(rec)  5/35  FWER rec 0 subj 0 (min p 0.125) best temporal|alpha +2.19dB | MI|alpha: +0.03dB t_s=+0.04 p_s=0.973 MI|beta1: -0.20dB t_s=-1.32 p_s=0.235
+  W-P linear-time-controlled           |mean| 0.63 dB  rms-t rec 0.94 subj 1.08 MDE subj 2.27 dB rec 2.18  #p<.05unc(rec)  0/35  FWER rec 0 subj 0 (min p 0.328) best occipital|beta1 -1.63dB | MI|alpha: -0.00dB t_s=-0.32 p_s=0.759 MI|beta1: +0.01dB t_s=+0.14 p_s=0.890
+
+=== onsets raw full (n_rec=12, n_subj=7)
+  W-P naive (gap 100s)                 |mean| 0.39 dB  rms-t rec 1.55 subj 1.39 MDE subj 1.12 dB rec 0.86  #p<.05unc(rec)  4/35  FWER rec 1 subj 0 (min p 0.172) best temporal|alpha +0.88dB | MI|alpha: +0.09dB t_s=+0.24 p_s=0.818 MI|beta1: -0.10dB t_s=-1.09 p_s=0.317
+  W1-P2 (gap 50s, different class)     |mean| 0.30 dB  rms-t rec 1.03 subj 0.95 MDE subj 1.32 dB rec 1.12  #p<.05unc(rec)  0/35  FWER rec 0 subj 0 (min p 0.656) best occipital|beta1 -0.78dB | MI|alpha: +0.02dB t_s=-0.27 p_s=0.794 MI|beta1: +0.00dB t_s=-0.10 p_s=0.921
+  P2-P1 (gap 50s, same class)          |mean| 0.28 dB  rms-t rec 0.66 subj 0.71 MDE subj 2.12 dB rec 1.57  #p<.05unc(rec)  0/35  FWER rec 0 subj 0 (min p 0.859) best occipital|beta1 +1.17dB | MI|alpha: +0.26dB t_s=+1.70 p_s=0.140 MI|beta1: +0.08dB t_s=+0.35 p_s=0.741
+  W2-W1 (gap 50s, same class)          |mean| 0.63 dB  rms-t rec 1.71 subj 2.01 MDE subj 1.12 dB rec 1.03  #p<.05unc(rec)  6/35  FWER rec 1 subj 0 (min p 0.109) best temporal|alpha +2.01dB | MI|alpha: -0.12dB t_s=-0.62 p_s=0.560 MI|beta1: -0.30dB t_s=-1.87 p_s=0.111
+  W-P linear-time-controlled           |mean| 0.58 dB  rms-t rec 0.91 subj 1.06 MDE subj 2.20 dB rec 1.88  #p<.05unc(rec)  0/35  FWER rec 0 subj 0 (min p 0.250) best occipital|beta1 -1.74dB | MI|alpha: -0.06dB t_s=-0.55 p_s=0.603 MI|beta1: +0.11dB t_s=+0.57 p_s=0.589
+
+=== onsets resid early (n_rec=12, n_subj=7)
+  W-P naive (gap 100s)                 |mean| 0.34 dB  rms-t rec 1.40 subj 1.37 MDE subj 0.81 dB rec 0.78  #p<.05unc(rec)  4/35  FWER rec 0 subj 0 (min p 0.156) best c_mid|beta2 +0.54dB | MI|alpha: +0.18dB t_s=+0.27 p_s=0.794 MI|beta1: -0.08dB t_s=-0.70 p_s=0.509
+  W1-P2 (gap 50s, different class)     |mean| 0.38 dB  rms-t rec 1.02 subj 1.06 MDE subj 1.31 dB rec 1.21  #p<.05unc(rec)  1/35  FWER rec 0 subj 0 (min p 0.109) best c_right|theta -0.87dB | MI|alpha: +0.02dB t_s=-0.29 p_s=0.779 MI|beta1: +0.14dB t_s=+0.52 p_s=0.624
+  P2-P1 (gap 50s, same class)          |mean| 0.35 dB  rms-t rec 0.79 subj 0.83 MDE subj 1.50 dB rec 1.27  #p<.05unc(rec)  0/35  FWER rec 0 subj 0 (min p 0.969) best occipital|beta1 +1.42dB | MI|alpha: +0.68dB t_s=+2.45 p_s=0.050 MI|beta1: +0.04dB t_s=-0.20 p_s=0.844
+  W2-W1 (gap 50s, same class)          |mean| 0.39 dB  rms-t rec 1.32 subj 1.71 MDE subj 0.99 dB rec 0.90  #p<.05unc(rec)  3/35  FWER rec 0 subj 0 (min p 0.062) best frontal|alpha +1.71dB | MI|alpha: -0.36dB t_s=-1.13 p_s=0.303 MI|beta1: -0.48dB t_s=-3.24 p_s=0.018
+  W-P linear-time-controlled           |mean| 0.51 dB  rms-t rec 0.94 subj 1.04 MDE subj 2.28 dB rec 1.97  #p<.05unc(rec)  1/35  FWER rec 0 subj 0 (min p 0.438) best c_right|theta -1.36dB | MI|alpha: -0.13dB t_s=-0.55 p_s=0.600 MI|beta1: +0.37dB t_s=+1.02 p_s=0.347
+
+=== onsets resid late (n_rec=12, n_subj=7)
+  W-P naive (gap 100s)                 |mean| 0.21 dB  rms-t rec 1.32 subj 1.24 MDE subj 0.78 dB rec 0.57  #p<.05unc(rec)  3/35  FWER rec 0 subj 0 (min p 0.391) best c_mid|beta2 +0.55dB | MI|alpha: +0.17dB t_s=+0.83 p_s=0.439 MI|beta1: +0.02dB t_s=-0.09 p_s=0.929
+  W1-P2 (gap 50s, different class)     |mean| 0.29 dB  rms-t rec 0.99 subj 1.06 MDE subj 1.07 dB rec 0.94  #p<.05unc(rec)  0/35  FWER rec 0 subj 0 (min p 0.922) best c_left|alpha -1.28dB | MI|alpha: +0.09dB t_s=+0.17 p_s=0.870 MI|beta1: +0.03dB t_s=+0.11 p_s=0.913
+  P2-P1 (gap 50s, same class)          |mean| 0.24 dB  rms-t rec 0.80 subj 0.85 MDE subj 1.39 dB rec 1.18  #p<.05unc(rec)  0/35  FWER rec 0 subj 0 (min p 0.969) best c_right|gamma +0.22dB | MI|alpha: +0.10dB t_s=+0.87 p_s=0.418 MI|beta1: +0.14dB t_s=+1.01 p_s=0.352
+  W2-W1 (gap 50s, same class)          |mean| 0.52 dB  rms-t rec 1.58 subj 1.88 MDE subj 0.98 dB rec 0.85  #p<.05unc(rec)  5/35  FWER rec 1 subj 0 (min p 0.156) best temporal|alpha +1.98dB | MI|alpha: +0.06dB t_s=+0.26 p_s=0.805 MI|beta1: -0.16dB t_s=-1.08 p_s=0.323
+  W-P linear-time-controlled           |mean| 0.58 dB  rms-t rec 1.02 subj 1.25 MDE subj 1.91 dB rec 1.60  #p<.05unc(rec)  1/35  FWER rec 0 subj 0 (min p 0.547) best c_left|alpha -2.60dB | MI|alpha: +0.01dB t_s=-0.25 p_s=0.813 MI|beta1: +0.04dB t_s=+0.23 p_s=0.829
+
+=== onsets resid full (n_rec=12, n_subj=7)
+  W-P naive (gap 100s)                 |mean| 0.23 dB  rms-t rec 1.44 subj 1.42 MDE subj 0.66 dB rec 0.52  #p<.05unc(rec)  3/35  FWER rec 1 subj 0 (min p 0.141) best temporal|alpha +0.72dB | MI|alpha: +0.17dB t_s=+0.58 p_s=0.580 MI|beta1: -0.01dB t_s=-0.39 p_s=0.713
+  W1-P2 (gap 50s, different class)     |mean| 0.21 dB  rms-t rec 0.92 subj 1.00 MDE subj 0.99 dB rec 0.90  #p<.05unc(rec)  1/35  FWER rec 0 subj 0 (min p 0.750) best c_right|beta2 +0.51dB | MI|alpha: +0.05dB t_s=-0.12 p_s=0.911 MI|beta1: +0.07dB t_s=+0.27 p_s=0.799
+  P2-P1 (gap 50s, same class)          |mean| 0.23 dB  rms-t rec 0.85 subj 0.93 MDE subj 1.43 dB rec 1.20  #p<.05unc(rec)  0/35  FWER rec 0 subj 0 (min p 0.641) best c_right|gamma +0.28dB | MI|alpha: +0.30dB t_s=+1.96 p_s=0.098 MI|beta1: +0.12dB t_s=+0.78 p_s=0.467
+  W2-W1 (gap 50s, same class)          |mean| 0.48 dB  rms-t rec 1.63 subj 2.00 MDE subj 0.89 dB rec 0.83  #p<.05unc(rec)  4/35  FWER rec 1 subj 1 (min p 0.047) best temporal|theta +0.92dB | MI|alpha: -0.07dB t_s=-0.34 p_s=0.746 MI|beta1: -0.26dB t_s=-1.78 p_s=0.125
+  W-P linear-time-controlled           |mean| 0.46 dB  rms-t rec 0.93 subj 1.11 MDE subj 1.78 dB rec 1.52  #p<.05unc(rec)  0/35  FWER rec 0 subj 0 (min p 0.609) best c_right|gamma -0.48dB | MI|alpha: -0.06dB t_s=-0.54 p_s=0.606 MI|beta1: +0.14dB t_s=+0.58 p_s=0.584
+
+=== onsets strict early (n_rec=12, n_subj=7)
+  W-P naive (gap 100s)                 |mean| 0.41 dB  rms-t rec 1.52 subj 1.48 MDE subj 1.04 dB rec 0.91  #p<.05unc(rec)  3/24  FWER rec 1 subj 0 (min p 0.141) best c_mid|beta2 +0.54dB | MI|alpha: +0.18dB t_s=+0.27 p_s=0.794 MI|beta1: -0.08dB t_s=-0.70 p_s=0.509
+  W1-P2 (gap 50s, different class)     |mean| 0.45 dB  rms-t rec 1.08 subj 1.12 MDE subj 1.46 dB rec 1.30  #p<.05unc(rec)  1/24  FWER rec 0 subj 0 (min p 0.109) best c_right|theta -0.87dB | MI|alpha: +0.02dB t_s=-0.29 p_s=0.779 MI|beta1: +0.14dB t_s=+0.52 p_s=0.624
+  P2-P1 (gap 50s, same class)          |mean| 0.39 dB  rms-t rec 0.73 subj 0.74 MDE subj 1.82 dB rec 1.51  #p<.05unc(rec)  0/24  FWER rec 0 subj 0 (min p 0.906) best occipital|beta1 +1.42dB | MI|alpha: +0.68dB t_s=+2.45 p_s=0.050 MI|beta1: +0.04dB t_s=-0.20 p_s=0.844
+  W2-W1 (gap 50s, same class)          |mean| 0.43 dB  rms-t rec 1.23 subj 1.73 MDE subj 1.29 dB rec 1.30  #p<.05unc(rec)  2/24  FWER rec 0 subj 0 (min p 0.062) best frontal|alpha +1.71dB | MI|alpha: -0.36dB t_s=-1.13 p_s=0.303 MI|beta1: -0.48dB t_s=-3.24 p_s=0.018
+  W-P linear-time-controlled           |mean| 0.60 dB  rms-t rec 0.96 subj 1.00 MDE subj 2.69 dB rec 2.29  #p<.05unc(rec)  1/24  FWER rec 0 subj 0 (min p 0.359) best c_right|theta -1.36dB | MI|alpha: -0.13dB t_s=-0.55 p_s=0.600 MI|beta1: +0.37dB t_s=+1.02 p_s=0.347
+
+=== onsets strict late (n_rec=12, n_subj=7)
+  W-P naive (gap 100s)                 |mean| 0.24 dB  rms-t rec 1.22 subj 1.20 MDE subj 0.84 dB rec 0.64  #p<.05unc(rec)  1/24  FWER rec 0 subj 0 (min p 0.234) best c_mid|beta2 +0.55dB | MI|alpha: +0.17dB t_s=+0.83 p_s=0.439 MI|beta1: +0.02dB t_s=-0.09 p_s=0.929
+  W1-P2 (gap 50s, different class)     |mean| 0.37 dB  rms-t rec 1.06 subj 1.13 MDE subj 1.10 dB rec 1.03  #p<.05unc(rec)  0/24  FWER rec 0 subj 0 (min p 0.781) best c_left|alpha -1.28dB | MI|alpha: +0.09dB t_s=+0.17 p_s=0.870 MI|beta1: +0.03dB t_s=+0.11 p_s=0.913
+  P2-P1 (gap 50s, same class)          |mean| 0.22 dB  rms-t rec 0.53 subj 0.63 MDE subj 1.70 dB rec 1.29  #p<.05unc(rec)  0/24  FWER rec 0 subj 0 (min p 0.953) best occipital|beta1 +0.69dB | MI|alpha: +0.10dB t_s=+0.87 p_s=0.418 MI|beta1: +0.14dB t_s=+1.01 p_s=0.352
+  W2-W1 (gap 50s, same class)          |mean| 0.57 dB  rms-t rec 1.35 subj 1.80 MDE subj 1.28 dB rec 1.10  #p<.05unc(rec)  3/24  FWER rec 0 subj 0 (min p 0.156) best frontal|theta +0.62dB | MI|alpha: +0.06dB t_s=+0.26 p_s=0.805 MI|beta1: -0.16dB t_s=-1.08 p_s=0.323
+  W-P linear-time-controlled           |mean| 0.71 dB  rms-t rec 1.07 subj 1.29 MDE subj 2.05 dB rec 1.89  #p<.05unc(rec)  1/24  FWER rec 0 subj 0 (min p 0.391) best c_left|alpha -2.60dB | MI|alpha: +0.01dB t_s=-0.25 p_s=0.813 MI|beta1: +0.04dB t_s=+0.23 p_s=0.829
+
+=== onsets strict full (n_rec=12, n_subj=7)
+  W-P naive (gap 100s)                 |mean| 0.28 dB  rms-t rec 1.32 subj 1.33 MDE subj 0.78 dB rec 0.66  #p<.05unc(rec)  1/24  FWER rec 0 subj 0 (min p 0.109) best c_mid|beta2 +0.51dB | MI|alpha: +0.17dB t_s=+0.58 p_s=0.580 MI|beta1: -0.01dB t_s=-0.39 p_s=0.713
+  W1-P2 (gap 50s, different class)     |mean| 0.25 dB  rms-t rec 0.97 subj 1.03 MDE subj 1.10 dB rec 0.97  #p<.05unc(rec)  1/24  FWER rec 0 subj 0 (min p 0.688) best c_right|beta2 +0.51dB | MI|alpha: +0.05dB t_s=-0.12 p_s=0.911 MI|beta1: +0.07dB t_s=+0.27 p_s=0.799
+  P2-P1 (gap 50s, same class)          |mean| 0.23 dB  rms-t rec 0.62 subj 0.70 MDE subj 1.80 dB rec 1.27  #p<.05unc(rec)  0/24  FWER rec 0 subj 0 (min p 0.906) best occipital|beta1 +0.89dB | MI|alpha: +0.30dB t_s=+1.96 p_s=0.098 MI|beta1: +0.12dB t_s=+0.78 p_s=0.467
+  W2-W1 (gap 50s, same class)          |mean| 0.54 dB  rms-t rec 1.35 subj 1.85 MDE subj 1.24 dB rec 1.06  #p<.05unc(rec)  2/24  FWER rec 0 subj 0 (min p 0.125) best frontal|alpha +2.22dB | MI|alpha: -0.07dB t_s=-0.34 p_s=0.746 MI|beta1: -0.26dB t_s=-1.78 p_s=0.125
+  W-P linear-time-controlled           |mean| 0.54 dB  rms-t rec 0.94 subj 1.08 MDE subj 2.04 dB rec 1.68  #p<.05unc(rec)  0/24  FWER rec 0 subj 0 (min p 0.594) best occipital|beta1 -1.22dB | MI|alpha: -0.06dB t_s=-0.54 p_s=0.606 MI|beta1: +0.14dB t_s=+0.58 p_s=0.584
+  POSITIVE CONTROL rest->task onset response (strict): parietal|beta1 +0.42dB t_rec=+3.28 pFWER_rec=0.100 pFWER_subj=0.016, occipital|beta2 +0.31dB t_rec=+3.20 pFWER_rec=0.113 pFWER_subj=0.375, occipital|beta1 +0.37dB t_rec=+2.71 pFWER_rec=0.259 pFWER_subj=0.375, parietal|beta2 +0.21dB t_rec=+2.05 pFWER_rec=0.597 pFWER_subj=0.844, frontal|alpha +0.66dB t_rec=+2.01 pFWER_rec=0.622 pFWER_subj=0.391
+  T4 resid  early P1 vs P2 (same class, 50s)     pairwise acc 0.33 (n=12) p=0.388
+  T4 resid  early W1 vs W2 (same class, 50s)     pairwise acc 0.58 (n=12) p=0.774
+  T4 resid  early P2 vs W1 (diff class, 50s)     pairwise acc 0.42 (n=12) p=0.774
+  T4 resid  early P1 vs W1 (diff class, 100s)    pairwise acc 0.33 (n=12) p=0.388
+  T4 resid  early P2 vs W2 (diff class, 100s)    pairwise acc 0.50 (n=12) p=1.000
+  T4 resid  full  P1 vs P2 (same class, 50s)     pairwise acc 0.42 (n=12) p=0.774
+  T4 resid  full  W1 vs W2 (same class, 50s)     pairwise acc 0.75 (n=12) p=0.146
+  T4 resid  full  P2 vs W1 (diff class, 50s)     pairwise acc 0.42 (n=12) p=0.774
+  T4 resid  full  P1 vs W1 (diff class, 100s)    pairwise acc 0.50 (n=12) p=1.000
+  T4 resid  full  P2 vs W2 (diff class, 100s)    pairwise acc 0.75 (n=12) p=0.146
+  T4 strict early P1 vs P2 (same class, 50s)     pairwise acc 0.58 (n=12) p=0.774
+  T4 strict early W1 vs W2 (same class, 50s)     pairwise acc 0.67 (n=12) p=0.388
+  T4 strict early P2 vs W1 (diff class, 50s)     pairwise acc 0.33 (n=12) p=0.388
+  T4 strict early P1 vs W1 (diff class, 100s)    pairwise acc 0.58 (n=12) p=0.774
+  T4 strict early P2 vs W2 (diff class, 100s)    pairwise acc 0.58 (n=12) p=0.774
+  T4 strict full  P1 vs P2 (same class, 50s)     pairwise acc 0.25 (n=12) p=0.146
+  T4 strict full  W1 vs W2 (same class, 50s)     pairwise acc 0.50 (n=12) p=1.000
+  T4 strict full  P2 vs W1 (diff class, 50s)     pairwise acc 0.42 (n=12) p=0.774
+  T4 strict full  P1 vs W1 (diff class, 100s)    pairwise acc 0.50 (n=12) p=1.000
+  T4 strict full  P2 vs W2 (diff class, 100s)    pairwise acc 0.58 (n=12) p=0.774

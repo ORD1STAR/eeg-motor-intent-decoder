@@ -1,0 +1,12 @@
+loaded 28 recordings (12 scenario 1, 16 scenario 2) from 10 subjects
+shallow S01: val 0.588 (9 ep, 60s) test S01-1:0.931 S01-2:0.783 S01-3:0.625
+shallow S02: val 0.645 (14 ep, 116s) test S02-1:0.570 S02-2:0.616 S02-3:0.801 S02-4:0.373
+shallow S03: val 0.562 (10 ep, 102s) test S03-1:0.735 S03-2:0.642
+shallow S04: val 0.761 (9 ep, 89s) test S04-1:0.614 S04-2:0.781 S04-3:0.729 S04-4:0.659
+shallow S05: val 0.676 (9 ep, 101s) test S05-3:0.882 S05-4:0.927 S05-5:0.756 S05-6:0.480
+shallow S06: val 0.605 (9 ep, 102s) test S06-1:0.733 S06-2:0.664
+shallow S07: val 0.709 (9 ep, 101s) test S07-2:0.859 S07-3:0.512 S07-4:0.425 S07-5:0.538
+shallow S08: val 0.444 (21 ep, 266s) test S08-1:0.819 S08-2:0.607
+shallow S09: val 0.546 (10 ep, 132s) test S09-1:0.643 S09-2:0.434
+shallow S10: val 0.600 (9 ep, 112s) test S10-0:0.488
+shallow LOSO task_rest AUC mean 0.665 median 0.651 (raw 0.582)

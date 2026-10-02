@@ -1,0 +1,8 @@
+bands_beta             AUC mean 0.645 median 0.716 (n=28) | scenario 1 0.771 scenario 2 0.550 | subject-level 0.662 (9/10 > 0.5) | dim 324 | 100s
+po_lowbeta             AUC mean 0.658 median 0.678 (n=28) | scenario 1 0.777 scenario 2 0.568 | subject-level 0.668 (8/10 > 0.5) | dim 180 | 43s
+closure_gate           windows kept: all 0.89, rest 0.97, task 0.92
+closure_gate           AUC mean 0.670 median 0.716 (n=28) | scenario 1 0.794 scenario 2 0.578 | subject-level 0.686 (9/10 > 0.5) | dim 462 | 89s
+closure_gate_shuffled  windows kept: all 0.89, rest 0.89, task 0.86
+closure_gate_shuffled  AUC mean 0.656 median 0.683 (n=28) | scenario 1 0.784 scenario 2 0.560 | subject-level 0.673 (9/10 > 0.5) | dim 462 | 105s
+blink_gate_strict_shuffled windows kept: all 0.51, rest 0.49, task 0.52
+blink_gate_strict_shuffled AUC mean 0.685 median 0.700 (n=27) | scenario 1 0.795 scenario 2 0.598 | subject-level 0.694 (10/10 > 0.5) | dim 462 | 140s

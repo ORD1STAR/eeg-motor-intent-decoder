@@ -1,0 +1,11 @@
+S01: selected fusion-win2    (inner 0.667) -> test AUC S01-1:0.733 S01-2:0.824 S01-3:0.479
+S02: selected fusion-win4    (inner 0.714) -> test AUC S02-1:0.456 S02-2:0.526 S02-3:0.284 S02-4:0.680
+S03: selected fusion-win2    (inner 0.647) -> test AUC S03-1:0.936 S03-2:0.737
+S04: selected fusion-win4    (inner 0.700) -> test AUC S04-1:0.481 S04-2:0.644 S04-3:0.885 S04-4:0.367
+S05: selected fusion-win4    (inner 0.670) -> test AUC S05-3:0.901 S05-4:0.813 S05-5:0.686 S05-6:0.424
+S06: selected fusion-win4    (inner 0.654) -> test AUC S06-1:0.910 S06-2:0.713
+S07: selected fusion-win4    (inner 0.674) -> test AUC S07-2:0.912 S07-3:0.655 S07-4:0.655 S07-5:0.463
+S08: selected fusion-win4    (inner 0.655) -> test AUC S08-1:0.915 S08-2:0.674
+S09: selected fusion-win2    (inner 0.653) -> test AUC S09-1:0.777 S09-2:0.715
+S10: selected fusion-win2    (inner 0.675) -> test AUC S10-0:0.526
+NESTED LOSO task_rest: recording AUC mean 0.670 median 0.683, bacc mean 0.562; subject-level AUC mean 0.685, 9/10 subjects above 0.5

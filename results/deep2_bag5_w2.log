@@ -1,0 +1,64 @@
+loaded 28 recordings (12 scenario 1, 16 scenario 2) from 10 subjects
+[bag5_w2] data on cuda: (27568, 1, 30, 250) in 20s
+[bag5_w2 true] S01 m1 val S02: 0.706 @ep 2.00 (10 ep, 36s)
+[bag5_w2 true] S01 m2 val S03: 0.695 @ep 2.49 (11 ep, 43s)
+[bag5_w2 true] S01 m3 val S04: 0.711 @ep 1.00 (9 ep, 33s)
+[bag5_w2 true] S01 m4 val S05: 0.740 @ep 0.50 (9 ep, 35s)
+[bag5_w2 true] S01 m5 val S06: 0.829 @ep 0.49 (9 ep, 39s)
+[bag5_w2 true] TEST S01 (219s) S01-1: m1 0.924 bag 0.904 | S01-2: m1 0.610 bag 0.658 | S01-3: m1 0.534 bag 0.605
+[bag5_w2 true] S02 m1 val S03: 0.710 @ep 0.49 (9 ep, 38s)
+[bag5_w2 true] S02 m2 val S04: 0.742 @ep 3.00 (11 ep, 42s)
+[bag5_w2 true] S02 m3 val S05: 0.726 @ep 1.00 (9 ep, 34s)
+[bag5_w2 true] S02 m4 val S06: 0.733 @ep 0.50 (9 ep, 37s)
+[bag5_w2 true] S02 m5 val S07: 0.597 @ep 1.49 (10 ep, 40s)
+[bag5_w2 true] TEST S02 (410s) S02-1: m1 0.547 bag 0.503 | S02-2: m1 0.762 bag 0.798 | S02-3: m1 0.634 bag 0.613 | S02-4: m1 0.581 bag 0.623
+[bag5_w2 true] S03 m1 val S04: 0.686 @ep 1.00 (9 ep, 40s)
+[bag5_w2 true] S03 m2 val S05: 0.749 @ep 1.00 (9 ep, 40s)
+[bag5_w2 true] S03 m3 val S06: 0.751 @ep 0.51 (9 ep, 41s)
+[bag5_w2 true] S03 m4 val S07: 0.639 @ep 1.51 (10 ep, 43s)
+[bag5_w2 true] S03 m5 val S08: 0.762 @ep 0.51 (9 ep, 44s)
+[bag5_w2 true] TEST S03 (619s) S03-1: m1 0.695 bag 0.751 | S03-2: m1 0.577 bag 0.487
+[bag5_w2 true] S04 m1 val S05: 0.764 @ep 1.00 (9 ep, 37s)
+[bag5_w2 true] S04 m2 val S06: 0.753 @ep 1.00 (9 ep, 38s)
+[bag5_w2 true] S04 m3 val S07: 0.623 @ep 0.49 (9 ep, 36s)
+[bag5_w2 true] S04 m4 val S08: 0.782 @ep 1.00 (9 ep, 38s)
+[bag5_w2 true] S04 m5 val S09: 0.498 @ep 8.00 (16 ep, 68s)
+[bag5_w2 true] TEST S04 (837s) S04-1: m1 0.731 bag 0.807 | S04-2: m1 0.614 bag 0.799 | S04-3: m1 0.835 bag 0.902 | S04-4: m1 0.613 bag 0.643
+[bag5_w2 true] S05 m1 val S06: 0.697 @ep 1.00 (9 ep, 39s)
+[bag5_w2 true] S05 m2 val S07: 0.571 @ep 13.50 (22 ep, 88s)
+[bag5_w2 true] S05 m3 val S08: 0.787 @ep 0.50 (9 ep, 40s)
+[bag5_w2 true] S05 m4 val S09: 0.530 @ep 1.00 (9 ep, 41s)
+[bag5_w2 true] S05 m5 val S10: 0.619 @ep 1.50 (10 ep, 47s)
+[bag5_w2 true] TEST S05 (1094s) S05-3: m1 0.891 bag 0.873 | S05-4: m1 0.848 bag 0.827 | S05-5: m1 0.788 bag 0.716 | S05-6: m1 0.495 bag 0.489
+[bag5_w2 true] S06 m1 val S07: 0.674 @ep 1.00 (9 ep, 42s)
+[bag5_w2 true] S06 m2 val S08: 0.773 @ep 0.51 (9 ep, 46s)
+[bag5_w2 true] S06 m3 val S09: 0.472 @ep 3.51 (12 ep, 60s)
+[bag5_w2 true] S06 m4 val S10: 0.716 @ep 1.50 (10 ep, 52s)
+[bag5_w2 true] S06 m5 val S01: 0.746 @ep 3.00 (11 ep, 52s)
+[bag5_w2 true] TEST S06 (1347s) S06-1: m1 0.759 bag 0.740 | S06-2: m1 0.733 bag 0.759
+[bag5_w2 true] S07 m1 val S08: 0.771 @ep 0.51 (9 ep, 41s)
+[bag5_w2 true] S07 m2 val S09: 0.445 @ep 1.00 (9 ep, 41s)
+[bag5_w2 true] S07 m3 val S10: 0.599 @ep 16.50 (25 ep, 111s)
+[bag5_w2 true] S07 m4 val S01: 0.729 @ep 8.49 (17 ep, 68s)
+[bag5_w2 true] S07 m5 val S02: 0.659 @ep 0.49 (9 ep, 34s)
+[bag5_w2 true] TEST S07 (1642s) S07-2: m1 0.844 bag 0.898 | S07-3: m1 0.522 bag 0.579 | S07-4: m1 0.362 bag 0.311 | S07-5: m1 0.593 bag 0.733
+[bag5_w2 true] S08 m1 val S09: 0.501 @ep 2.51 (11 ep, 52s)
+[bag5_w2 true] S08 m2 val S10: 0.639 @ep 3.50 (12 ep, 57s)
+[bag5_w2 true] S08 m3 val S01: 0.727 @ep 0.49 (9 ep, 40s)
+[bag5_w2 true] S08 m4 val S02: 0.652 @ep 1.49 (10 ep, 42s)
+[bag5_w2 true] S08 m5 val S03: 0.671 @ep 4.51 (13 ep, 56s)
+[bag5_w2 true] TEST S08 (1890s) S08-1: m1 0.908 bag 0.887 | S08-2: m1 0.700 bag 0.661
+[bag5_w2 true] S09 m1 val S10: 0.715 @ep 20.00 (28 ep, 123s)
+[bag5_w2 true] S09 m2 val S01: 0.698 @ep 0.49 (9 ep, 38s)
+[bag5_w2 true] S09 m3 val S02: 0.626 @ep 3.00 (11 ep, 44s)
+[bag5_w2 true] S09 m4 val S03: 0.793 @ep 13.00 (21 ep, 93s)
+[bag5_w2 true] S09 m5 val S04: 0.720 @ep 14.50 (23 ep, 93s)
+[bag5_w2 true] TEST S09 (2282s) S09-1: m1 0.570 bag 0.566 | S09-2: m1 0.484 bag 0.243
+[bag5_w2 true] S10 m1 val S01: 0.785 @ep 1.50 (10 ep, 44s)
+[bag5_w2 true] S10 m2 val S02: 0.693 @ep 2.50 (11 ep, 48s)
+[bag5_w2 true] S10 m3 val S03: 0.751 @ep 0.50 (9 ep, 42s)
+[bag5_w2 true] S10 m4 val S04: 0.786 @ep 1.00 (9 ep, 39s)
+[bag5_w2 true] S10 m5 val S05: 0.719 @ep 1.00 (9 ep, 39s)
+[bag5_w2 true] TEST S10 (2494s) S10-0: m1 0.616 bag 0.527
+[bag5_w2 null1] S01 m1 val S02: 0.444 @ep 3.00 (11 ep, 41s)
+[bag5_w2 null1] S01 m2 val S03: 0.631 @ep 0.49 (9 ep, 38s)

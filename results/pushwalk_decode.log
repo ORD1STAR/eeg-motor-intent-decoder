@@ -1,0 +1,30 @@
+<local-path> CODE COMPLET\PFE-Final\eegbci\pushwalk.py:537: RuntimeWarning: Mean of empty slice
+  P.append(np.nanmean(rec.P[m], 0))
+<local-path> CODE COMPLET\PFE-Final\eegbci\pushwalk.py:540: RuntimeWarning: All-NaN slice encountered
+  P = np.nan_to_num(P - np.nanmedian(P, 0))
+strict|eeg|loso            AUC 0.542 subj 0.538 CI [0.509,0.566] (8/10>.5) | sc1 0.555 sc2 0.533 | bacc 0.531 | block 0.584 | sc2 pairs push-first 0.530 walk-first 0.509 | null 0.502+-0.017 p=0.032 (sc2 null 0.499+-0.015 p=0.032) | 13s
+strict|eeg|lobo            AUC 0.514 subj 0.491 CI [0.371,0.582] (6/10>.5) | sc1 0.530 sc2 0.502 | bacc 0.516 | block 0.554 | sc2 pairs push-first 0.495 walk-first 0.474 | null 0.479+-0.023 p=0.032 (sc2 null 0.480+-0.018 p=0.129) | 31s
+strict|time|loso           AUC 0.811 subj 0.860 CI [0.768,0.950] (10/10>.5) | sc1 1.000 sc2 0.670 | bacc 0.678 | block 0.810 | sc2 pairs push-first 0.990 walk-first 0.000 | null 0.490+-0.066 p=0.032 (sc2 null 0.495+-0.023 p=0.032) | 40s
+strict|time|lobo           AUC 0.715 subj 0.786 CI [0.650,0.926] (9/10>.5) | sc1 0.995 sc2 0.505 | bacc 0.740 | block 0.718 | sc2 pairs push-first 0.487 walk-first 0.000 | null 0.322+-0.062 p=0.032 (sc2 null 0.198+-0.050 p=0.032) | 54s
+strict|eyes|loso           AUC 0.504 subj 0.482 CI [0.401,0.557] (6/10>.5) | sc1 0.484 sc2 0.519 | bacc 0.508 | block 0.517 | sc2 pairs push-first 0.528 walk-first 0.450 | null 0.505+-0.034 p=0.516 (sc2 null 0.501+-0.023 p=0.258) | 61s
+strict|eyes|lobo           AUC 0.556 subj 0.595 CI [0.496,0.705] (7/10>.5) | sc1 0.645 sc2 0.490 | bacc 0.557 | block 0.525 | sc2 pairs push-first 0.485 walk-first 0.324 | null 0.444+-0.042 p=0.032 (sc2 null 0.399+-0.028 p=0.032) | 74s
+strict|eeg+eyes|loso       AUC 0.538 subj 0.521 CI [0.457,0.582] (7/10>.5) | sc1 0.536 sc2 0.540 | bacc 0.532 | block 0.566 | sc2 pairs push-first 0.539 walk-first 0.471 | 75s
+strict|eeg+eyes|lobo       AUC 0.540 subj 0.552 CI [0.445,0.668] (6/10>.5) | sc1 0.617 sc2 0.482 | bacc 0.545 | block 0.527 | sc2 pairs push-first 0.477 walk-first 0.343 | 76s
+strict|eeg|train sc1 -> sc2: AUC 0.518 | push-first pairs 0.515 CI [0.4772806662554876, 0.5556282208970925] | walk-first pairs 0.499 CI [0.4710052601123696, 0.52926231980564]
+strict|time|train sc1 -> sc2: AUC 0.673 | push-first pairs 1.000 CI [1.0, 1.0] | walk-first pairs 0.000 CI [0.0, 0.0]
+strict|eyes|train sc1 -> sc2: AUC 0.487 | push-first pairs 0.475 CI [0.40126778107455896, 0.5222227736614682] | walk-first pairs 0.535 CI [0.48661762508224615, 0.658301961239142]
+strict|eeg|train sc2 (LOSO): sc1 AUC 0.551 | sc2 push-first 0.527 walk-first 0.513 CI [0.4609260254622981, 0.5479027708322002]
+strict|time|train sc2 (LOSO): sc1 AUC 1.000 | sc2 push-first 1.000 walk-first 0.000 CI [0.0, 0.0]
+strict|eyes|train sc2 (LOSO): sc1 AUC 0.496 | sc2 push-first 0.532 walk-first 0.436 CI [0.33909822197729367, 0.49255961398335363]
+<local-path> CODE COMPLET\PFE-Final\eegbci\pushwalk.py:537: RuntimeWarning: Mean of empty slice
+  P.append(np.nanmean(rec.P[m], 0))
+<local-path> CODE COMPLET\PFE-Final\eegbci\pushwalk.py:540: RuntimeWarning: All-NaN slice encountered
+  P = np.nan_to_num(P - np.nanmedian(P, 0))
+resid|eeg|loso             AUC 0.530 subj 0.526 CI [0.496,0.555] (7/10>.5) | sc1 0.533 sc2 0.527 | bacc 0.525 | block 0.554 | sc2 pairs push-first 0.522 walk-first 0.491 | null 0.504+-0.017 p=0.129 (sc2 null 0.501+-0.014 p=0.032) | 86s
+resid|eeg|lobo             AUC 0.507 subj 0.484 CI [0.364,0.568] (7/10>.5) | sc1 0.531 sc2 0.489 | bacc 0.505 | block 0.498 | sc2 pairs push-first 0.481 walk-first 0.450 | null 0.460+-0.020 p=0.032 (sc2 null 0.455+-0.019 p=0.065) | 104s
+<local-path> CODE COMPLET\PFE-Final\eegbci\pushwalk.py:537: RuntimeWarning: Mean of empty slice
+  P.append(np.nanmean(rec.P[m], 0))
+<local-path> CODE COMPLET\PFE-Final\eegbci\pushwalk.py:540: RuntimeWarning: All-NaN slice encountered
+  P = np.nan_to_num(P - np.nanmedian(P, 0))
+raw|eeg|loso               AUC 0.573 subj 0.568 CI [0.512,0.624] (8/10>.5) | sc1 0.580 sc2 0.567 | bacc 0.550 | block 0.585 | sc2 pairs push-first 0.563 walk-first 0.488 | null 0.504+-0.031 p=0.032 (sc2 null 0.501+-0.018 p=0.032) | 115s
+raw|eeg|lobo               AUC 0.535 subj 0.536 CI [0.409,0.658] (7/10>.5) | sc1 0.615 sc2 0.475 | bacc 0.535 | block 0.523 | sc2 pairs push-first 0.458 walk-first 0.346 | null 0.458+-0.037 p=0.032 (sc2 null 0.405+-0.022 p=0.032) | 135s

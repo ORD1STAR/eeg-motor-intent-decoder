@@ -1,0 +1,4 @@
+calibration (n=28 recordings): loso 0.662 | loso+cal 0.709 | cal-only 0.710
+  loso      0.662  null 0.497 � 0.057  p=0.091
+  loso+cal  0.709  null 0.536 � 0.077  p=0.091
+  cal-only  0.710  null 0.528 � 0.100  p=0.091

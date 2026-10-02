@@ -1,0 +1,8 @@
+set_frontal7           AUC mean 0.629 median 0.650 (n=28) | scenario 1 0.689 scenario 2 0.584 | subject-level 0.634 (10/10 > 0.5) | dim 147 | 53s
+set_frontal7           null 0.475 +- 0.035 (n=8), p=0.111 | 122s
+set_centpar7           AUC mean 0.638 median 0.676 (n=28) | scenario 1 0.759 scenario 2 0.547 | subject-level 0.645 (8/10 > 0.5) | dim 147 | 39s
+set_centpar7           null 0.492 +- 0.023 (n=8), p=0.111 | 68s
+set_occ3               AUC mean 0.644 median 0.655 (n=28) | scenario 1 0.711 scenario 2 0.593 | subject-level 0.651 (8/10 > 0.5) | dim 39 | 18s
+set_occ3               null 0.483 +- 0.018 (n=8), p=0.111 | 25s
+set_temporal4          AUC mean 0.583 median 0.574 (n=28) | scenario 1 0.719 scenario 2 0.481 | subject-level 0.602 (8/10 > 0.5) | dim 60 | 34s
+set_temporal4          null 0.485 +- 0.046 (n=8), p=0.111 | 48s

@@ -1,0 +1,24 @@
+deep2 analysis plan (written 2026-10-01 ~23:20, BEFORE any deep2 GPU result existed)
+
+Task: task_rest, LOSO over 10 subjects, metric = mean over 28 recordings of the AUC of the 8 s causal EMA of P(active),
+computed on the 4 s window grid exactly as ensemble.py (2 s net outputs taken at the nearest window end).
+
+Configurations (all: deep.ShallowNet-style training, AdamW 1e-3 wd 1e-2, cosine 40 ep, batch 256, deep.augment,
+class-weighted CE, causal Euclidean alignment tau 60 s; K = 5 members per outer fold; member j trains on the 8
+subjects other than test s_k and v_j = subjects[(k+j) % 10] and is early-stopped on v_j with the smoothed
+per-recording AUC, evaluated twice per epoch, patience 8 epochs):
+  A  bag5_w2   ShallowNet, 30 ch, 2 s windows                (the baseline net, bagged)
+  D  gap5_w2   ShallowNet with global average pooling, 30 ch, 2 s
+  C  po5_w2    ShallowNet, 12 parieto-occipital ch (aligned on their own covariance), 2 s
+  B  bag5_w4   ShallowNet, 30 ch, 4 s windows (only if GPU time allows)
+
+Ensemble with the fusion LR (realtime.FINAL_CFG, C=0.01): 0.5 * P_lr + 0.5 * P_deep (fixed a priori, as ensemble.py).
+
+PRIMARY candidate (fixed now):  ens:multi:bag = 0.5 * LR + 0.5 * mean of the bags of all configurations run.
+SECONDARY: ens:A:bag (bagging only); nested:bag = per outer fold, the configuration with the best mean inner-validation
+score (validation subjects only), then 0.5 * LR + 0.5 * that bag.
+Everything else (single configs, member-1-only) is descriptive and counted in the number of configurations tried.
+
+Controls: drift-matched nulls with the shifts of ensemble.main(null_seed) for seeds 1, 2, 3 (the whole pipeline, incl.
+early stopping and the LR, retrained on shifted labels); paired comparison with ensemble_loso.json (same windows,
+same recordings): Wilcoxon signed-rank on the 10 subject-level AUC differences.

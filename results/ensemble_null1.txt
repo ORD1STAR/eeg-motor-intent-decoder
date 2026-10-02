@@ -1,0 +1,32 @@
+loaded 28 recordings (12 scenario 1, 16 scenario 2) from 10 subjects
+S01-1: riemann AUC 0.760 bacc 0.68/0.74 | shallow AUC 0.497 bacc 0.47/0.49 | ensemble AUC 0.665 bacc 0.58/0.56
+S01-2: riemann AUC 0.745 bacc 0.50/0.60 | shallow AUC 0.534 bacc 0.48/0.62 | ensemble AUC 0.643 bacc 0.54/0.72
+S01-3: riemann AUC 0.295 bacc 0.34/0.43 | shallow AUC 0.365 bacc 0.47/0.52 | ensemble AUC 0.306 bacc 0.35/0.48
+S02-1: riemann AUC 0.448 bacc 0.53/0.46 | shallow AUC 0.483 bacc 0.39/0.53 | ensemble AUC 0.484 bacc 0.47/0.48
+S02-2: riemann AUC 0.741 bacc 0.66/0.59 | shallow AUC 0.550 bacc 0.50/0.48 | ensemble AUC 0.692 bacc 0.60/0.52
+S02-3: riemann AUC 0.447 bacc 0.50/0.44 | shallow AUC 0.362 bacc 0.36/0.36 | ensemble AUC 0.376 bacc 0.50/0.41
+S02-4: riemann AUC 0.316 bacc 0.50/0.36 | shallow AUC 0.177 bacc 0.24/0.45 | ensemble AUC 0.194 bacc 0.48/0.39
+S03-1: riemann AUC 0.488 bacc 0.41/0.48 | shallow AUC 0.582 bacc 0.50/0.61 | ensemble AUC 0.521 bacc 0.49/0.52
+S03-2: riemann AUC 0.665 bacc 0.54/0.52 | shallow AUC 0.360 bacc 0.50/0.53 | ensemble AUC 0.567 bacc 0.50/0.49
+S04-1: riemann AUC 0.245 bacc 0.29/0.33 | shallow AUC 0.370 bacc 0.38/0.39 | ensemble AUC 0.240 bacc 0.30/0.34
+S04-2: riemann AUC 0.583 bacc 0.42/0.63 | shallow AUC 0.696 bacc 0.64/0.48 | ensemble AUC 0.604 bacc 0.46/0.64
+S04-3: riemann AUC 0.549 bacc 0.52/0.45 | shallow AUC 0.458 bacc 0.43/0.40 | ensemble AUC 0.524 bacc 0.52/0.50
+S04-4: riemann AUC 0.651 bacc 0.58/0.68 | shallow AUC 0.549 bacc 0.66/0.53 | ensemble AUC 0.674 bacc 0.62/0.59
+S05-3: riemann AUC 0.591 bacc 0.54/0.52 | shallow AUC 0.395 bacc 0.46/0.52 | ensemble AUC 0.482 bacc 0.47/0.59
+S05-4: riemann AUC 0.368 bacc 0.42/0.37 | shallow AUC 0.461 bacc 0.50/0.34 | ensemble AUC 0.347 bacc 0.50/0.31
+S05-5: riemann AUC 0.543 bacc 0.50/0.57 | shallow AUC 0.502 bacc 0.53/0.50 | ensemble AUC 0.562 bacc 0.50/0.63
+S05-6: riemann AUC 0.765 bacc 0.50/0.70 | shallow AUC 0.619 bacc 0.57/0.60 | ensemble AUC 0.748 bacc 0.51/0.62
+S06-1: riemann AUC 0.429 bacc 0.50/0.41 | shallow AUC 0.607 bacc 0.50/0.44 | ensemble AUC 0.560 bacc 0.50/0.43
+S06-2: riemann AUC 0.639 bacc 0.50/0.53 | shallow AUC 0.410 bacc 0.50/0.62 | ensemble AUC 0.455 bacc 0.50/0.60
+S07-2: riemann AUC 0.685 bacc 0.52/0.69 | shallow AUC 0.422 bacc 0.39/0.49 | ensemble AUC 0.458 bacc 0.52/0.53
+S07-3: riemann AUC 0.633 bacc 0.50/0.49 | shallow AUC 0.492 bacc 0.48/0.33 | ensemble AUC 0.552 bacc 0.58/0.43
+S07-4: riemann AUC 0.195 bacc 0.50/0.33 | shallow AUC 0.438 bacc 0.49/0.47 | ensemble AUC 0.395 bacc 0.50/0.46
+S07-5: riemann AUC 0.715 bacc 0.61/0.60 | shallow AUC 0.314 bacc 0.41/0.48 | ensemble AUC 0.682 bacc 0.50/0.63
+S08-1: riemann AUC 0.306 bacc 0.34/0.49 | shallow AUC 0.292 bacc 0.39/0.45 | ensemble AUC 0.250 bacc 0.32/0.44
+S08-2: riemann AUC 0.446 bacc 0.52/0.62 | shallow AUC 0.466 bacc 0.50/0.47 | ensemble AUC 0.474 bacc 0.50/0.60
+S09-1: riemann AUC 0.717 bacc 0.64/0.57 | shallow AUC 0.539 bacc 0.47/0.44 | ensemble AUC 0.672 bacc 0.58/0.47
+S09-2: riemann AUC 0.651 bacc 0.61/0.66 | shallow AUC 0.611 bacc 0.55/0.57 | ensemble AUC 0.628 bacc 0.57/0.63
+S10-0: riemann AUC 0.654 bacc 0.50/0.48 | shallow AUC 0.557 bacc 0.50/0.66 | ensemble AUC 0.629 bacc 0.51/0.65
+riemann   LOSO AUC mean 0.545 median 0.587 | subject-level 0.554 (8/10 > 0.5) | bacc fixed 0.506 adaptive 0.527
+shallow   LOSO AUC mean 0.468 median 0.475 | subject-level 0.478 (4/10 > 0.5) | bacc fixed 0.473 adaptive 0.491
+ensemble  LOSO AUC mean 0.514 median 0.538 | subject-level 0.523 (8/10 > 0.5) | bacc fixed 0.499 adaptive 0.524

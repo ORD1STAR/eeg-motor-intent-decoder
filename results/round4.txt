@@ -1,0 +1,75 @@
+fusion logbp-all+ts-PO win2 lr0.01 smooth=8s | task_rest | xsess auc mean 0.714 median 0.710 (n=27)
+fusion logbp-all+ts-PO win2 lr0.01 smooth=8s | task_rest | loso auc mean 0.664 median 0.711 (n=28)
+fusion logbp-all+ts-PO win2 lr0.1 smooth=8s | task_rest | xsess auc mean 0.694 median 0.691 (n=27)
+fusion logbp-all+ts-PO win2 lr0.1 smooth=8s | task_rest | loso auc mean 0.655 median 0.697 (n=28)
+fusion logbp-all+ts-PO win2 lr1 smooth=8s | task_rest | xsess auc mean 0.680 median 0.667 (n=27)
+fusion logbp-all+ts-PO win2 lr1 smooth=8s | task_rest | loso auc mean 0.654 median 0.689 (n=28)
+fusion logbp-all+ts-PO win2 lda0 smooth=8s | task_rest | xsess auc mean 0.681 median 0.654 (n=27)
+fusion logbp-all+ts-PO win2 lda0 smooth=8s | task_rest | loso auc mean 0.663 median 0.694 (n=28)
+logbp all fb win2 lr0.01 smooth=8s | task_rest | xsess auc mean 0.693 median 0.713 (n=27)
+logbp all fb win2 lr0.01 smooth=8s | task_rest | loso auc mean 0.569 median 0.532 (n=28)
+logbp all fb win2 lr0.1 smooth=8s | task_rest | xsess auc mean 0.693 median 0.704 (n=27)
+logbp all fb win2 lr0.1 smooth=8s | task_rest | loso auc mean 0.567 median 0.536 (n=28)
+logbp all fb win2 lr1 smooth=8s | task_rest | xsess  auc mean 0.685 median 0.694 (n=27)
+logbp all fb win2 lr1 smooth=8s | task_rest | loso   auc mean 0.566 median 0.537 (n=28)
+logbp all fb win2 lda0 smooth=8s | task_rest | xsess auc mean 0.663 median 0.674 (n=27)
+logbp all fb win2 lda0 smooth=8s | task_rest | loso  auc mean 0.569 median 0.525 (n=28)
+ts PO a+b win2 lr0.01 smooth=8s | task_rest | xsess  auc mean 0.692 median 0.669 (n=27)
+ts PO a+b win2 lr0.01 smooth=8s | task_rest | loso   auc mean 0.651 median 0.720 (n=28)
+ts PO a+b win2 lr0.1 smooth=8s | task_rest | xsess   auc mean 0.676 median 0.695 (n=27)
+ts PO a+b win2 lr0.1 smooth=8s | task_rest | loso    auc mean 0.649 median 0.718 (n=28)
+ts PO a+b win2 lr1 smooth=8s | task_rest | xsess     auc mean 0.674 median 0.716 (n=27)
+ts PO a+b win2 lr1 smooth=8s | task_rest | loso      auc mean 0.649 median 0.718 (n=28)
+ts PO a+b win2 lda0 smooth=8s | task_rest | xsess    auc mean 0.689 median 0.663 (n=27)
+ts PO a+b win2 lda0 smooth=8s | task_rest | loso     auc mean 0.657 median 0.706 (n=28)
+fusion logbp-all+ts-PO win4 lr0.01 smooth=8s | task_rest | xsess auc mean 0.734 median 0.707 (n=27)
+fusion logbp-all+ts-PO win4 lr0.01 smooth=8s | task_rest | loso auc mean 0.667 median 0.668 (n=28)
+fusion logbp-all+ts-PO win4 lr0.1 smooth=8s | task_rest | xsess auc mean 0.719 median 0.674 (n=27)
+fusion logbp-all+ts-PO win4 lr0.1 smooth=8s | task_rest | loso auc mean 0.648 median 0.664 (n=28)
+fusion logbp-all+ts-PO win4 lr1 smooth=8s | task_rest | xsess auc mean 0.707 median 0.671 (n=27)
+fusion logbp-all+ts-PO win4 lr1 smooth=8s | task_rest | loso auc mean 0.640 median 0.673 (n=28)
+fusion logbp-all+ts-PO win4 lda0 smooth=8s | task_rest | xsess auc mean 0.664 median 0.632 (n=27)
+fusion logbp-all+ts-PO win4 lda0 smooth=8s | task_rest | loso auc mean 0.671 median 0.703 (n=28)
+joblib.externals.loky.process_executor._RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "<local-path>", line 373, in _sendback_result
+    result_queue.put(
+  File "<local-path>", line 233, in put
+    self._writer.send_bytes(obj)
+  File "<local-path>", line 200, in send_bytes
+    self._send_bytes(m[offset:offset + size])
+  File "<local-path>", line 289, in _send_bytes
+    ov, err = _winapi.WriteFile(self._handle, buf, overlapped=True)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+OSError: [WinError 1450] Insufficient system resources exist to complete the requested service
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "<local-path> CODE COMPLET\PFE-Final\eegbci\explore.py", line 118, in <module>
+    globals()[sys.argv[1]]()
+  File "<local-path> CODE COMPLET\PFE-Final\eegbci\explore.py", line 110, in round4
+    B = load_bundle(cfg, win_s=win)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<local-path> CODE COMPLET\PFE-Final\eegbci\explore.py", line 23, in load_bundle
+    W = dict(zip([r.rec_id for r in recs], Parallel(n_jobs=6)(delayed(build_windows)(r, reref=reref, win_s=win_s)
+                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<local-path>", line 2072, in __call__
+    return output if self.return_generator else list(output)
+                                                ^^^^^^^^^^^^
+  File "<local-path>", line 1682, in _get_outputs
+    yield from self._retrieve()
+  File "<local-path>", line 1784, in _retrieve
+    self._raise_error_fast()
+  File "<local-path>", line 1859, in _raise_error_fast
+    error_job.get_result(self.timeout)
+  File "<local-path>", line 758, in get_result
+    return self._return_or_raise()
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "<local-path>", line 773, in _return_or_raise
+    raise self._result
+OSError: [WinError 1450] Insufficient system resources exist to complete the requested service

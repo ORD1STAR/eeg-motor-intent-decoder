@@ -1,0 +1,14 @@
+[fb-ts align=rec] features in 21s
+fb-ts align=rec | cmd3 | within                      bacc mean 0.385 median 0.371 (n=28) | null 0.324�0.007 p=0.048
+fb-ts align=rec | task_rest | within                 bacc mean 0.551 median 0.500 (n=28) | null 0.503�0.008 p=0.048
+fb-ts align=rec | push_walk | within                 bacc mean 0.593 median 0.566 (n=28) | null 0.529�0.032 p=0.048
+time-only | cmd3 | within                            bacc mean 0.352 median 0.186 (n=28) | null 0.373�0.017 p=0.952
+time-only | task_rest | within                       bacc mean 0.357 median 0.248 (n=28) | null 0.480�0.019 p=1.000
+time-only | push_walk | within                       bacc mean 0.677 median 0.634 (n=28) | null 0.536�0.022 p=0.048
+[fb-ts align=causal60 detrend=causal120] features in 24s
+fb-ts align=causal60 detrend=causal120 | cmd3 | within bacc mean 0.390 median 0.377 (n=28) | null 0.343�0.007 p=0.048
+fb-ts align=causal60 detrend=causal120 | task_rest | within bacc mean 0.552 median 0.500 (n=28) | null 0.495�0.005 p=0.048
+fb-ts align=causal60 detrend=causal120 | push_walk | within bacc mean 0.587 median 0.584 (n=28) | null 0.548�0.016 p=0.048
+time-only | cmd3 | within                            bacc mean 0.352 median 0.186 (n=28) | null 0.373�0.017 p=0.952
+time-only | task_rest | within                       bacc mean 0.357 median 0.248 (n=28) | null 0.480�0.019 p=1.000
+time-only | push_walk | within                       bacc mean 0.677 median 0.634 (n=28) | null 0.536�0.022 p=0.048

@@ -1,0 +1,12 @@
+blink_score            windows kept: all 0.51, rest 0.48, task 0.56
+blink_score            AUC mean 0.689 median 0.718 (n=27) | subject-level 0.710 (9/10 > 0.5) | dim 462 | 157s
+blink_gate_shuffled    shuffled-gate AUC per seed [0.692 0.673 0.673 0.677 0.649] mean 0.673
+blink_gate_shuffled    windows kept: all 0.51, rest 0.52, task 0.51
+blink_gate_shuffled    AUC mean 0.692 median 0.716 (n=27) | subject-level 0.706 (10/10 > 0.5) | dim 462 | 167s
+blink_gate             windows kept: all 0.51, rest 0.48, task 0.56
+blink_gate             AUC mean 0.653 median 0.669 (n=27) | subject-level 0.674 (10/10 > 0.5) | dim 462 | 123s
+blink_gate             null 0.480 +- 0.028 (n=12), p=0.077 | 203s
+blink_gate_strict      windows kept: all 0.51, rest 0.48, task 0.56
+blink_gate_strict      AUC mean 0.607 median 0.631 (n=27) | subject-level 0.615 (9/10 > 0.5) | dim 462 | 118s
+blink_gate_strict      null 0.479 +- 0.028 (n=12), p=0.077 | 207s
+base@2                 AUC mean 0.669 median 0.716 (n=28) | subject-level 0.685 (9/10 > 0.5) | dim 462 | 102s

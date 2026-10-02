@@ -1,0 +1,31 @@
+loaded 28 recordings (12 scenario 1, 16 scenario 2) from 10 subjects
+  features 7/28 recordings (110s)
+  features 14/28 recordings (202s)
+  features 21/28 recordings (278s)
+  features 28/28 recordings (363s)
+features ready in 364s
+BASELINE sanity (fusion4, plain LOSO, smooth 8.0s): auc mean 0.671 median 0.683 (expect ~0.671/0.683)
+  plain LOSO  fusion4          auc mean 0.671 median 0.683 (n=28)
+  plain LOSO  logbp120         auc mean 0.675 median 0.699 (n=28)
+  plain LOSO  tspo120          auc mean 0.648 median 0.659 (n=28)
+  plain LOSO  both120          auc mean 0.660 median 0.684 (n=28)
+  plain LOSO  logbpPO          auc mean 0.664 median 0.678 (n=28)
+  plain LOSO  bandsel          auc mean 0.657 median 0.707 (n=28)
+  plain LOSO  fusion2          auc mean 0.669 median 0.716 (n=28)
+  plain LOSO  multiscale       auc mean 0.659 median 0.671 (n=28)
+  plain LOSO  stretch_scalar   auc mean 0.656 median 0.682 (n=28)
+  plain LOSO  stretch_perdim   auc mean 0.660 median 0.671 (n=28)
+  plain LOSO  featsmooth4s     auc mean 0.657 median 0.683 (n=28)
+  plain LOSO  linear_ensemble  auc mean 0.674 median 0.699 (n=28)
+S01: selected logbp120         (inner 0.673) -> test AUC S01-1:0.740 S01-2:0.796 S01-3:0.323
+S02: selected logbpPO          (inner 0.718) -> test AUC S02-1:0.395 S02-2:0.536 S02-3:0.398 S02-4:0.458
+S03: selected fusion2          (inner 0.647) -> test AUC S03-1:0.936 S03-2:0.737
+S04: selected fusion4          (inner 0.700) -> test AUC S04-1:0.481 S04-2:0.644 S04-3:0.885 S04-4:0.367
+S05: selected logbp120         (inner 0.672) -> test AUC S05-3:0.897 S05-4:0.812 S05-5:0.729 S05-6:0.427
+S06: selected linear_ensemble  (inner 0.660) -> test AUC S06-1:0.891 S06-2:0.712
+S07: selected linear_ensemble  (inner 0.678) -> test AUC S07-2:0.911 S07-3:0.616 S07-4:0.623 S07-5:0.481
+S08: selected linear_ensemble  (inner 0.657) -> test AUC S08-1:0.938 S08-2:0.657
+S09: selected logbp120         (inner 0.659) -> test AUC S09-1:0.813 S09-2:0.667
+S10: selected linear_ensemble  (inner 0.679) -> test AUC S10-0:0.508
+NESTED classical2 task_rest: recording AUC mean 0.656 median 0.662, bacc mean 0.574; subject-level AUC mean 0.672, 9/10 subjects above 0.5
+consensus winner (selected most often by the inner loop): linear_ensemble

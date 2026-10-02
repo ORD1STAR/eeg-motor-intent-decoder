@@ -1,0 +1,33 @@
+  proxies S01-1
+  proxies S02-1
+  proxies S03-1
+  proxies S04-1
+  proxies S06-1
+  proxies S08-1
+  proxies S09-1
+  proxies S01-2
+  proxies S02-2
+  proxies S03-2
+  proxies S04-2
+  proxies S06-2
+  proxies S07-2
+  proxies S08-2
+  proxies S09-2
+  proxies S01-3
+  proxies S02-3
+  proxies S04-3
+  proxies S05-3
+  proxies S07-3
+  proxies S02-4
+  proxies S04-4
+  proxies S05-4
+  proxies S07-4
+  proxies S05-5
+  proxies S07-5
+  proxies S05-6
+  proxies S10-0
+proxy_all              AUC mean 0.642 median 0.638 (n=28) | scenario 1 0.677 scenario 2 0.616 | subject-level 0.647 (9/10 > 0.5) | dim 11 | 28s
+proxy_all              null 0.492 +- 0.012 (n=8), p=0.111 | 34s
+proxy_ocular           AUC mean 0.640 median 0.623 (n=28) | scenario 1 0.679 scenario 2 0.611 | subject-level 0.646 (10/10 > 0.5) | dim 5 | 7s
+proxy_muscle           AUC mean 0.577 median 0.581 (n=28) | scenario 1 0.592 scenario 2 0.565 | subject-level 0.583 (9/10 > 0.5) | dim 6 | 5s
+base_resid             AUC mean 0.593 median 0.602 (n=28) | scenario 1 0.664 scenario 2 0.541 | subject-level 0.605 (8/10 > 0.5) | dim 462 | 135s

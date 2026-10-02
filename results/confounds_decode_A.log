@@ -1,0 +1,5 @@
+base                   AUC mean 0.671 median 0.683 (n=28) | subject-level 0.688 (9/10 > 0.5) | dim 462 | 157s
+base                   null 0.489 +- 0.040 (n=20), p=0.048 | 468s
+no_ocular4             AUC mean 0.674 median 0.703 (n=28) | subject-level 0.691 (9/10 > 0.5) | dim 442 | 130s
+no_ocular4             null 0.476 +- 0.040 (n=12), p=0.077 | 300s
+no_frontal             AUC mean 0.666 median 0.663 (n=28) | subject-level 0.684 (10/10 > 0.5) | dim 417 | 65s

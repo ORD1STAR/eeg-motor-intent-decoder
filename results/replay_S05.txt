@@ -1,0 +1,5 @@
+loaded 28 recordings (12 scenario 1, 16 scenario 2) from 10 subjects
+S05-3 S1: windows 960 | online/offline max |dp| 5.88e-15 | 18.6 ms/window | AUC 0.888 | state acc 0.82 | false on 1.00/min rest | onsets 4/4 | latency 1.7s
+S05-4 S1: windows 960 | online/offline max |dp| 8.10e-15 | 17.7 ms/window | AUC 0.828 | state acc 0.77 | false on 1.50/min rest | onsets 4/4 | latency 0.2s
+S05-5 S2: windows 1001 | online/offline max |dp| 8.33e-15 | 17.3 ms/window | AUC 0.695 | state acc 0.67 | false on 0.00/min rest | onsets 2/2 | latency 4.3s
+S05-6 S2: windows 1001 | online/offline max |dp| 1.05e-14 | 16.8 ms/window | AUC 0.411 | state acc 0.53 | false on 1.50/min rest | onsets 2/2 | latency 24.4s
