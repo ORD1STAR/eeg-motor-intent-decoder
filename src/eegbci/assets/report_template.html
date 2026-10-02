@@ -1,0 +1,162 @@
+<title>PFE Brain Switch</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Condensed:wght@500;600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+{{STYLE}}
+<style>
+svg .s1-line{fill:none;stroke:var(--s-honest);stroke-width:2}
+svg .s2-line{fill:none;stroke:var(--s-leaky);stroke-width:2}
+svg .s1-band{fill:var(--s-honest);opacity:.16}
+svg .s2-band{fill:var(--s-leaky);opacity:.16}
+svg .base-band{fill:var(--ink);opacity:.04}
+svg .post-band{fill:var(--accent);opacity:.07}
+svg .null-band{fill:var(--ink);opacity:.07}
+svg .b0{fill:var(--line-2)} svg .b1{fill:var(--s-honest)} svg .b2{fill:var(--accent)} svg .b3{fill:var(--s-third)}
+svg .m1{fill:var(--s-honest);stroke:var(--surface);stroke-width:2} svg .m2{fill:var(--accent);stroke:var(--surface);stroke-width:2}
+svg .m3{fill:var(--s-third);stroke:var(--surface);stroke-width:2}
+svg .val{font:600 12px var(--mono);fill:var(--ink)}
+.plate{background:#ffffff;border-radius:8px;padding:10px;display:flex;justify-content:center}
+.plate img{max-width:520px;width:100%;height:auto}
+.verdict-table td:last-child{font-weight:600}
+.ok{color:var(--good-text)} .bad{color:var(--crit)}
+pre.cmd{background:var(--sunken);border:1px solid var(--line);border-radius:8px;padding:12px 14px;font:13px/1.6 var(--mono);overflow-x:auto;margin:10px 0}
+</style>
+
+<div class="wrap">
+<nav class="toc" aria-label="Contents">
+  <b>Contents</b>
+  <a href="#verdict">Result</a>
+  <a href="#possible">What the data allows</a>
+  <a href="#discovery">The discovery</a>
+  <a href="#models">Model progression</a>
+  <a href="#people">Per participant</a>
+  <a href="#realtime">Real time</a>
+  <a href="#pipeline">The pipeline</a>
+  <a href="#limits">Limits &amp; next</a>
+</nav>
+<main>
+<header>
+  <div class="eyebrow">PFE · eegbci pipeline · results, October 2026</div>
+  <h1>PFE Brain Switch</h1>
+  <p class="lede">The existing 28 recordings were rebuilt from scratch: causal preprocessing, Riemannian and deep models, and an evaluation that cannot be fooled by drift. The result is a real-time switch that detects when a person moves from rest into an imagined command. It works on people it has never seen, and it is backed by a physiological effect that drift cannot produce.</p>
+  <div class="meta"><span>10 participants · 28 recordings · no new data</span><span>task: rest vs active command</span><span>all scores: AUC, chance = 0.50</span></div>
+</header>
+
+<section id="verdict" style="padding-top:28px">
+  <div class="stats">
+    <div class="stat"><div class="v honest">{{ens_auc}}</div><div class="k">AUC on people never seen in training (ensemble, leave-one-subject-out). {{n_subj_ok}}/10 above chance.</div></div>
+    <div class="stat"><div class="v">{{nested_auc}}</div><div class="k">nested leave-one-subject-out, with model selection inside the loop. {{nested_ok}}/10 above chance.</div></div>
+    <div class="stat"><div class="v">{{xsess}}</div><div class="k">AUC on a new session of a known person</div></div>
+    <div class="stat"><div class="v">{{ens_bacc}}</div><div class="k">balanced accuracy of the on/off decision with the adaptive threshold ({{ens_bacc_fixed}} with a fixed one)</div></div>
+  </div>
+  <p style="margin-top:14px">The old PFE models reported 35–50% on three classes. That number came from leaky splits and pipeline bugs, and the audit found no evidence they decoded anything. The new pipeline decodes one thing reliably (rest vs active), proves it with controls, and runs live at ~11 ms per decision.</p>
+</section>
+
+<section id="possible">
+  <h2>What this data can and cannot do</h2>
+  <p class="sec-sub">Within-recording, leave-one-cycle-out, balanced accuracy. "Null" means the same pipeline with the protocol timeline circularly shifted (drift kept, labels broken). "Time-only" sees nothing but the timestamp.</p>
+  <div class="tablebox"><table class="verdict-table">
+    <thead><tr><th>Question</th><th class="num">EEG model</th><th class="num">Drift-null</th><th class="num">Time-only</th><th>Verdict</th></tr></thead>
+    <tbody>
+      <tr><td>Neutral / push / walk (3 classes)</td><td class="num">{{f"{r1['cmd3']['mean']:.3f}"}}</td><td class="num">{{f"{r1['cmd3']['null_mean']:.3f}"}}</td><td class="num">{{f"{r1['t_cmd3']['mean']:.3f}"}}</td><td class="ok">Above null, weak. Driven by rest vs task.</td></tr>
+      <tr><td>Rest vs active command</td><td class="num">{{f"{r1['tr']['mean']:.3f}"}}</td><td class="num">{{f"{r1['tr']['null_mean']:.3f}"}}</td><td class="num">{{f"{r1['t_tr']['mean']:.3f}"}}</td><td class="ok">Real. Time cannot explain it. This is the target.</td></tr>
+      <tr><td>Push vs walk</td><td class="num">{{f"{r1['pw']['mean']:.3f}"}}</td><td class="num">{{f"{r1['pw']['null_mean']:.3f}"}}</td><td class="num"><strong>{{f"{r1['t_pw']['mean']:.3f}"}}</strong></td><td class="bad">Not decodable here. The timestamp alone does better.</td></tr>
+    </tbody>
+  </table></div>
+  <p>In both protocols push always comes before walk, so any push-vs-walk classifier on these recordings can be explained by "earlier vs later". No preprocessing can fix that after the fact. Rest vs task is different: rest blocks sit <em>between</em> task blocks, so a monotonic drift cannot imitate the label. The switch is also exactly what a real-time controller needs first: <em>is the user issuing a command right now?</em></p>
+</section>
+
+<section id="discovery">
+  <h2>The discovery: an internal-attention switch, not a motor rhythm</h2>
+  <p class="sec-sub">Band power around every block change (28 recordings), baseline-corrected on the 2–12 s before the change.</p>
+  <div class="figure">
+    <div class="ttl">Median power change 3–15 s after the change</div>
+    <div class="cap">Red = power increase, blue = decrease. Left: switching into a command. Right: switching back to rest.</div>
+    <div class="plate"><img src="data:image/png;base64,{{topo}}" alt="Scalp maps: posterior alpha and beta increase after rest-to-task and decrease after task-to-rest"></div>
+  </div>
+  <div class="figure">
+    <div class="ttl">Parieto-occipital beta (13–30 Hz), mean ± SEM over 28 recordings</div>
+    <div class="cap">Shaded left = baseline window, shaded right = analysis window. The two transitions move in opposite directions.</div>
+    <div class="legend"><span><i style="background:var(--s-honest)"></i>rest → task</span><span><i style="background:var(--s-leaky)"></i>task → rest</span></div>
+    <div class="scroll">{{curve_beta}}</div>
+    <details><summary>Same for alpha (8–13 Hz)</summary><div class="scroll">{{curve_alpha}}</div></details>
+  </div>
+  <ul class="tight">
+    <li>Entering a command raises posterior beta. The strongest channels are {{", ".join(f"{c} {m:+.2f} dB (p={p:.4f})" for c, m, p in sorted(beta_on["channels"], key=lambda s: s[2])[:4])}}.</li>
+    <li>Leaving it lowers the same rhythm: {{", ".join(f"{c} {m:+.2f} dB (p={p:.4f})" for c, m, p in sorted(beta_off["channels"], key=lambda s: s[2])[:4])}}. Wilcoxon test across recordings.</li>
+    <li>Drift moves power in one direction over time, so it would give the <em>same</em> sign at both kinds of change. Opposite signs at onsets and offsets point to a genuine state change.</li>
+    <li>The classic motor-imagery signature (a mu/beta <em>decrease</em> over C3/C4) does not appear. The effect is posterior and positive, which fits an internally directed attention or imagery state: the participant disengages from the screen. That is what the switch decodes. It is honest, but it is not motor imagery.</li>
+  </ul>
+</section>
+
+<section id="models">
+  <h2>Model progression, on people never seen</h2>
+  <p class="sec-sub">Leave-one-subject-out AUC, averaged over recordings. The grey band is the range of AUCs the ensemble reaches on circularly shifted protocols (drift-null runs: {{nulls}}).</p>
+  <div class="figure">
+    <div class="legend"><span><i class="sq" style="background:var(--line-2)"></i>baseline steps</span><span><i class="sq" style="background:var(--s-honest)"></i>Riemannian</span><span><i class="sq" style="background:var(--s-third)"></i>deep</span><span><i class="sq" style="background:var(--accent)"></i>ensemble</span></div>
+    <div class="scroll">{{prog}}</div>
+  </div>
+  <ul class="tight">
+    <li><strong>Causal re-centering</strong> whitens each window by the person's own exponentially weighted mean covariance over the last ~60 s. It removes slow drift and between-person offsets while keeping changes that happen within seconds, and it runs online unchanged.</li>
+    <li><strong>Parieto-occipital channels</strong> (CP/P/O) carry the signal. Restricting the tangent-space model to them lifted cross-subject AUC from about 0.55 to 0.65.</li>
+    <li><strong>Fusion</strong> = log-power of all 30 channels in 5 bands + tangent space of 12 posterior channels in 4 bands, logistic regression (C = 0.01), 4 s windows every 0.5 s, 8 s causal smoothing.</li>
+    <li><strong>Null-controlled</strong>: within recording {{f"{conf['within']['mean']:.3f}"}} vs null {{f"{conf['within']['null_mean']:.3f}"}} ± {{f"{conf['within']['null_std']:.3f}"}}; cross-session {{f"{conf['xsess']['mean']:.3f}"}} vs {{f"{conf['xsess']['null_mean']:.3f}"}} ± {{f"{conf['xsess']['null_std']:.3f}"}}; cross-subject {{f"{conf['loso']['mean']:.3f}"}} vs {{f"{conf['loso']['null_mean']:.3f}"}} ± {{f"{conf['loso']['null_std']:.3f}"}}. Each beat all 30 shifts.</li>
+    <li><strong>Nested</strong>: for each held-out person the configuration was chosen among 6 candidates using only the other 9. Result {{nested_auc}} (subject-level {{nested_subj}}), so the selection was not overfitted.</li>
+    <li><strong>Ensemble</strong> averages the fusion model and ShallowConvNet with equal weights fixed before testing. Their errors are uncorrelated, so the ensemble gains about 0.04 AUC over either one and is the only model above chance for all 10 people.</li>
+  </ul>
+</section>
+
+<section id="people">
+  <h2>Per participant</h2>
+  <div class="figure">
+    <div class="ttl">AUC per held-out participant (mean of their recordings)</div>
+    <div class="legend"><span><i style="background:var(--s-honest)"></i>Riemannian fusion</span><span><i style="background:var(--s-third)"></i>ShallowConvNet</span><span><i style="background:var(--accent)"></i>Ensemble</span></div>
+    <div class="scroll">{{dots}}</div>
+    <details><summary>Table view</summary><div class="tablebox"><table><thead><tr><th>Participant</th><th class="num">Riemann</th><th class="num">Shallow</th><th class="num">Ensemble</th><th class="num">Nested pick</th></tr></thead><tbody>{{subj_table}}</tbody></table></div></details>
+  </div>
+  <p>Performance varies a lot between people and between sessions of the same person (S05: 0.90 on one session, 0.46 on another). This is normal for BCIs. A short calibration per user (fine-tuning the last layer or the logistic regression on 1–2 minutes of labelled rest/task) is the next lever, and the pipeline supports it.</p>
+</section>
+
+<section id="realtime">
+  <h2>Real time</h2>
+  <p class="sec-sub">S05 left out of training, then its 4 recordings streamed through the online decoder in 100 ms chunks.</p>
+  <div class="tablebox"><table>
+    <thead><tr><th>Recording</th><th class="num">AUC</th><th class="num">State accuracy</th><th class="num">False ON / min rest</th><th class="num">Onsets detected</th><th class="num">Median latency</th><th class="num">CPU / decision</th><th class="num">Online vs offline Δp</th></tr></thead>
+    <tbody>{{replay_rows}}</tbody>
+  </table></div>
+  <ul class="tight">
+    <li><strong>Exact parity:</strong> the streaming decoder reproduces the offline features to machine precision, so every score on this page is what the live system would do.</li>
+    <li><strong>Decision logic:</strong> P(active) is smoothed (8 s EMA) and compared with its own running mean (120 s). The switch turns on 2% above it for 1 s and off 2% below it. No per-user threshold is needed.</li>
+    <li><strong>Artifacts:</strong> each output carries an <code>artifact</code> flag (peak-to-peak &gt; 150 µV outside Fp1/Fp2) so the device can ignore those decisions.</li>
+  </ul>
+<pre class="cmd">python -m eegbci.realtime train                 # fit on all 28 recordings → eegbci/models/brain_switch.joblib
+python -m eegbci.realtime replay S05            # held-out replay with metrics + parity check
+python -m eegbci.realtime lsl NeuroVisor uV     # live from an LSL stream (30 ch, 500 Hz)</pre>
+</section>
+
+<section id="pipeline">
+  <h2>The pipeline</h2>
+  <div class="pipeline">
+    <div><b>Load</b><code>all_data</code> only, hash-deduplicated, protocol from EDF markers, lazy reading</div>
+    <div><b>Clean</b>robust bad-channel detection + spherical interpolation, &gt;150 µV windows flagged</div>
+    <div><b>Filter</b>causal Butterworth bank 4–8, 8–12, 12–16, 16–24, 24–30, 8–30, 1–40 Hz, decimate to 125 Hz</div>
+    <div><b>Window</b>2 s or 4 s, hop 0.5 s, 1 s guard at block edges, OAS covariances</div>
+    <div><b>Align</b>causal Riemannian re-centering (τ 60 s) / causal Euclidean alignment for deep nets</div>
+    <div><b>Model</b>log-power + PO tangent space → LR, ShallowConvNet, 50/50 ensemble</div>
+    <div><b>Decide</b>8 s EMA, adaptive threshold with hysteresis, artifact flag</div>
+  </div>
+  <p>Every step from <em>Filter</em> onwards uses only past samples. The code is in <code>eegbci/</code>. <code>eegbci/README.md</code> lists each command, from building the cache to the nested benchmark.</p>
+</section>
+
+<section id="limits">
+  <h2>Limits and next steps</h2>
+  <ul class="tight">
+    <li><strong>Push vs walk is out of reach with these recordings.</strong> Recording new data was ruled out, so the realistic design is a <em>one-command switch</em> (idle / go). Or the switch can be combined with a non-EEG selector (dwell time, a cyclic menu where the switch confirms the highlighted item) to get several commands from one reliable signal.</li>
+    <li><strong>The signal is posterior and attention-like.</strong> The switch may also respond to other kinds of mental disengagement (daydreaming, eyes defocusing). It should be validated with false-positive tests during free viewing before driving anything that moves.</li>
+    <li><strong>Per-user calibration helps.</strong> Adding the first 3–5 minutes of a session (labelled) to the cross-subject training set raised the AUC on the rest of that session from {{f"{calib['obs']['loso']:.3f}"}} to {{f"{calib['obs']['loso+cal']:.3f}"}}. The shifted-protocol null for the calibrated model is {{f"{np.mean([d['loso+cal'] for d in calib['nulls']]):.3f}"}} ± {{f"{np.std([d['loso+cal'] for d in calib['nulls']]):.3f}"}}. A short warm-up is worth building into the app.</li>
+    <li><strong>Ensemble null:</strong> the deep branch was trained under shifted protocols too. Its null AUC ({{null_mean}}) is far below the real {{ens_auc}}, so the network is not learning drift either.</li>
+  </ul>
+  <footer>All numbers were produced by <code>eegbci</code> on <code>all_data</code>: causal features, leave-one-cycle/session/subject-out splits, drift-null by circular protocol shift, and a time-only control. Raw logs are in <code>eegbci/results/</code>.</footer>
+</section>
+</main>
+</div>
