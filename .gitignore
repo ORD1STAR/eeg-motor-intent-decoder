@@ -1,0 +1,35 @@
+# data and anything derived from recordings
+data/raw/*
+!data/raw/.gitkeep
+data/**/*.edf
+data/**/*.npz
+data/**/*.fif
+*.edf
+*.bdf
+*.npz
+*.npy
+*.pkl
+*.joblib
+*.pt
+*.pth
+.cache/
+_cache/
+exports/
+models/*
+!models/.gitkeep
+
+# python / tooling
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ipynb_checkpoints/
+*.egg-info/
+build/
+dist/
+.venv/
+venv/
+.env
+.env.*
+!.env.example
+.idea/
+.vscode/
