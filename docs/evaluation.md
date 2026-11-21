@@ -95,6 +95,37 @@ The Riemann branch matched the offline features to about 1e-14. Per the QA revie
 without bad channels (23/28), and the deep branch is computed differently online. One of four recordings is below
 chance, in line with the large between-recording spread.
 
+## 5b. Public check: PhysioNet eegmmidb (`results/physionet_loso.json`)
+
+Same features, model (logistic regression, C = 0.1) and controls, on the imagery runs 6, 10 and 14 of 20 PhysioNet
+subjects (60 recordings): rest (T0), imagined both fists (T1, mapped to push) and both feet (T2, mapped to walk), in
+randomised order. Recordings are converted to the 30 headset channels at 500 Hz (FT9 and FT10 spline-interpolated),
+2 s windows, 0.5 s label guard, no probability smoothing. Artifacts: windows above 3 x the recording's median
+peak-to-peak are dropped (the fixed 150 uV limit removed ~95 % of windows on this amplifier). Drift-null: 20 circular
+shifts of the labels (at least 10 s), so p = 0.048 is the smallest value this number of shifts can give.
+`python -m eegbci.physionet run 20`.
+
+| Features | Task | Split | AUC | Drift-null |
+|---|---|---|---|---|
+| fusion (log band power + parieto-occipital tangent space) | rest vs task | LOSO | **0.720** | 0.497 +/- 0.019 |
+| fusion | fists vs feet | LOSO | **0.673** | 0.504 +/- 0.024 |
+| tangent space, motor strip, 8-30 Hz | rest vs task | LOSO | **0.658** | 0.495 +/- 0.024 |
+| tangent space, motor strip, 8-30 Hz | fists vs feet | LOSO | **0.666** | 0.497 +/- 0.021 |
+| fusion | rest vs task | within recording | 0.793 | 0.747 +/- 0.010 |
+| fusion | fists vs feet | within recording | 0.677 | 0.455 +/- 0.019 |
+| tangent space, motor strip | rest vs task | within recording | 0.733 | 0.674 +/- 0.014 |
+| tangent space, motor strip | fists vs feet | within recording | 0.724 | 0.475 +/- 0.025 |
+| time only | rest vs task | LOSO | 0.532 | - |
+| time only | fists vs feet | LOSO | 0.506 | - |
+
+Reading:
+* With a randomised order the time-only model is at chance (0.506), unlike the in-house protocols (0.811). Fists vs
+  feet is decoded at 0.67 on unseen subjects, well above the drift-null. The pipeline is able to separate two imagined
+  movements; on the in-house data the obstacle is the fixed block order, not the method.
+* Within-recording rest-vs-task has a high drift-null (0.747): rest and task alternate every ~4 s, so shifted labels
+  still overlap the true ones. Quote the LOSO rows.
+* 20 subjects and 20 label shifts: the p-values are at the floor of the test and do not rank the feature sets.
+
 ## 6. Limitations
 
 * 10 participants, 28 recordings: subject-level conclusions are fragile.
@@ -107,6 +138,6 @@ chance, in line with the large between-recording spread.
 
 * Apply the review's fixes (reset the reference at the eyes-open onset, scale-invariant eigenvalue floor, causal
   bad-channel handling online) and re-run LOSO and the nulls.
-* Collect a protocol with randomised block order and no eyes-closed baseline, with recorded EOG.
+* Collect a protocol with randomised block order (the PhysioNet check in 5b shows the pipeline works under that design) and no eyes-closed baseline, with recorded EOG.
 * Per-user warm-up with proper nulls for the calibration gain.
 * Complete the drift-null runs of the bagged deep branch.

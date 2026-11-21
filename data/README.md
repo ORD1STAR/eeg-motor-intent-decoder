@@ -70,6 +70,8 @@ scenario and its segments (pseudonymised names).
 
 ## Public alternatives
 
-The pipeline is generic for 30-channel / 500 Hz EDF with the annotation scheme above. For a public check of the
-Riemannian and deep components, adapt `config.py` (channels, protocols) to a public motor-imagery set such as
-PhysioNet EEGBCI or BCI Competition IV 2a.
+The pipeline is generic for 30-channel / 500 Hz EDF with the annotation scheme above. A public check is built in:
+`python -m eegbci.physionet download 20` fetches the imagery runs (6, 10, 14) of the PhysioNet EEG Motor
+Movement/Imagery dataset (Schalk et al., 2004; Goldberger et al., 2000; ODC-By licence) into `data/raw/physionet/`
+(ignored by git), and `src/eegbci/physionet.py` converts them to the 30 headset channels at 500 Hz. Results in
+`docs/evaluation.md`, section 5b. Other sets such as BCI Competition IV 2a need their own adapter.

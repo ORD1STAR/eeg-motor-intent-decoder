@@ -42,18 +42,28 @@ def make_model(name="lr", C_reg=0.1):
 class Bundle:
     """Features + metadata for many recordings, relabelable on demand."""
 
-    def __init__(self, recs, windows, feats):
+    def __init__(self, recs, windows, feats, guard=C.GUARD_S, reject_uv=C.PTP_REJECT_UV, reject_rel=None):
         self.recs = {r.rec_id: r for r in recs}
         self.W = windows
         self.F = feats
+        self.guard = guard          # seconds dropped at both ends of every block (short trials need less than 1 s)
+        # artifact rule: a fixed peak-to-peak limit in µV (headset recordings), or, when reject_rel is set, a limit
+        # of reject_rel x the recording's median peak-to-peak (other amplifiers, where 150 µV can be the baseline)
+        self.reject_uv = reject_uv
+        self.reject_rel = reject_rel
+
+    def artifact_limit(self, rid):
+        if self.reject_rel is not None:
+            return self.reject_rel * float(np.median(self.W[rid]["meta"]["ptp_max"].to_numpy()))
+        return self.reject_uv
 
     def labels(self, rid, scheme, shift=0.0, reject_artifacts=True):
         r = self.recs[rid]
         meta = self.W[rid]["meta"]
-        lab, blk, cyc, tib = label_windows(meta, r.blocks, r.duration, shift)
+        lab, blk, cyc, tib = label_windows(meta, r.blocks, r.duration, shift, guard=self.guard)
         y, ok = SCHEMES[scheme](lab)
         if reject_artifacts:
-            ok &= meta["ptp_max"].to_numpy() <= C.PTP_REJECT_UV
+            ok &= meta["ptp_max"].to_numpy() <= self.artifact_limit(rid)
         return y, ok, cyc, blk
 
     def subset(self, rids, scheme, shifts=None, feats=None):
@@ -76,6 +86,8 @@ def eval_within(B, scheme, model="lr", shifts=None, feats=None, C_reg=0.1, rids=
     res = {}
     for rid in (rids or B.F):
         (X,), (y,), (G,) = B.subset([rid], scheme, shifts, feats)
+        if len(np.unique(y)) < 2:              # e.g. artifact rejection left one class: nothing to evaluate
+            continue
         cyc = G[:, 0]
         yt, yp, pp = [], [], []
         for c in np.unique(cyc):
@@ -153,10 +165,11 @@ def random_shifts(B, rng, min_s=60.0):
     return out
 
 
-def null_distribution(fn, B, n_perm=50, seed=0, n_jobs=8, key="bacc"):
-    """fn(shifts) -> result dict. Returns mean score for each of n_perm circular shifts."""
+def null_distribution(fn, B, n_perm=50, seed=0, n_jobs=8, key="bacc", min_s=60.0):
+    """fn(shifts) -> result dict. Returns mean score for each of n_perm circular shifts, each at least
+    ``min_s`` away from the true timeline (and from the seam)."""
     rng = np.random.default_rng(seed)
-    shift_sets = [random_shifts(B, rng) for _ in range(n_perm)]
+    shift_sets = [random_shifts(B, rng, min_s) for _ in range(n_perm)]
     vals = Parallel(n_jobs=n_jobs, prefer="threads")(delayed(lambda s: summarize(fn(s), key)["mean"])(s) for s in shift_sets)
     return np.array(vals)
 
