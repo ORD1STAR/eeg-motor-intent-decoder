@@ -64,6 +64,7 @@ accuracy chance 0.333. Leave-one-subject-out (LOSO) unless stated. Full tables i
 | ... nested selection (selection inside the loop) | **0.670**, 9/10 participants above 0.5 | unbiased for the whole procedure |
 | ... ensemble (Riemann + ShallowConvNet, 50/50 fixed a priori) | **0.707**, 10/10 participants above 0.5 | nulls 0.514 and 0.538 |
 | ... after the independent code review | about **0.60-0.64** (Riemann) | scenario 1: 0.800 vs scenario 2: 0.574; see below |
+| Public check: PhysioNet eegmmidb, 20 subjects, fists vs feet imagery, LOSO | Riemann fusion **0.673**, motor tangent space **0.666** | drift-null 0.50 +/- 0.02, **time-only 0.506** (randomised order) |
 | Real-time replay, held-out participant | 17-19 ms per decision, all onsets detected | AUC 0.888 / 0.828 / 0.695 / 0.411 over four recordings |
 
 **What the controls revealed (kept in the results on purpose):**
@@ -78,6 +79,9 @@ accuracy chance 0.333. Leave-one-subject-out (LOSO) unless stated. Full tables i
 - *Neural but entangled.* The posterior beta increase at rest to task is neural (+0.33 dB, 26/28 recordings, p < 1e-4,
   89 % survives regression of eye/muscle proxies), yet a model on eye proxies alone reaches 0.640 and the EEG with the proxies
   removed 0.593. The switch reads a visual-disengagement / internal-attention state, not a pure motor command.
+- *Public check.* On PhysioNet eegmmidb (imagined both fists vs both feet, randomised order) the same pipeline reaches
+  LOSO AUC 0.67 while the time-only model stays at 0.51. The method separates two imagined movements when the protocol
+  does not tie them to elapsed time, which supports reading the in-house push-vs-walk failure as a protocol limit.
 - *Warm-up gain.* A 3-5 min per-user warm-up lifts 0.662 to 0.709, but part of the gain also appears under the null.
 
 <p align="center">
@@ -194,6 +198,16 @@ python scripts/plot_summary.py               # figures of this README, from resu
 </details>
 
 <details>
+<summary><b>Public check on PhysioNet eegmmidb (no private data needed)</b></summary>
+
+```bash
+python -m eegbci.physionet download 20       # imagery runs 6, 10, 14 of 20 subjects (MNE downloader)
+python -m eegbci.physionet run 20            # LOSO + within-recording, drift-null, time-only control
+python -m eegbci.physionet summary           # table from results/physionet_loso.json
+```
+</details>
+
+<details>
 <summary><b>2025 baselines and the audit</b></summary>
 
 ```bash
@@ -247,7 +261,8 @@ the offline features, and regression tests for known issues.
 - [ ] New protocol: randomised block order, no eyes-closed baseline, recorded EOG
 - [ ] Per-user warm-up with proper nulls for the calibration gain
 - [ ] Complete the drift-null runs of the bagged deep branch
-- [ ] Public-dataset configuration (PhysioNet EEGBCI / BCI IV 2a) to let others run the pipeline
+- [x] Public-dataset check on PhysioNet eegmmidb (`python -m eegbci.physionet`), so anyone can run the pipeline
+- [ ] BCI Competition IV 2a configuration
 
 <details>
 <summary><b>Troubleshooting / FAQ</b></summary>

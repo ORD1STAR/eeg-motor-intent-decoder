@@ -147,3 +147,10 @@ def test_time_features():
     # the control is label-free: identical whatever the protocol shift
     tf2 = time_features(B)
     assert all(np.array_equal(tf[k], tf2[k]) for k in tf)
+
+
+def test_eval_within_skips_a_recording_with_a_single_class():
+    # only push and rest blocks: push_walk keeps a single class, which used to crash the classifier fit
+    blocks = [(0, 40, 0, "rest", 0), (40, 80, 1, "push", 1), (80, 120, 1, "push2", 2)]
+    B = toy_bundle(1, blocks=blocks, duration=120.0)
+    assert eval_within(B, "push_walk") == {}
